@@ -33,3 +33,11 @@ C:\Users\phanb\Desktop\Labs\Vinh\Project\Project\obj\Debug\net6.0-windows\Projec
 C:\Users\phanb\Desktop\Labs\Vinh\Project\Project\obj\Debug\net6.0-windows\Project.genruntimeconfig.cache
 C:\Users\phanb\Desktop\Labs\Vinh\Project\Project\obj\Debug\net6.0-windows\ref\Project.dll
 C:\Users\phanb\Desktop\Labs\Vinh\Project\Project\obj\Debug\net6.0-windows\Project.Properties.Resources.resources
+C:\Users\phanb\Desktop\Labs\Vinh\Project\Project\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\phanb\Desktop\Labs\Vinh\Project\Project\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\phanb\Desktop\Labs\Vinh\Project\Project\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\phanb\Desktop\Labs\Vinh\Project\Project\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\phanb\Desktop\Labs\Vinh\Project\Project\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\phanb\Desktop\Labs\Vinh\Project\Project\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\phanb\Desktop\Labs\Vinh\Project\Project\obj\Debug\net6.0-windows\Project.HomePage.resources
+C:\Users\phanb\Desktop\Labs\Vinh\Project\Project\obj\Debug\net6.0-windows\Project.csproj.CopyComplete
