@@ -1,12 +1,19 @@
-using System.Data.SqlClient;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class Form1 : Form
+    public partial class Register : Form
     {
-        public Form1()
+        public Register()
         {
             InitializeComponent();
         }
@@ -25,11 +32,11 @@ namespace Project
             Color.DimGray, 0, ButtonBorderStyle.Solid);// bottom
         }
 
-        private void password_pn_Paint(object sender, PaintEventArgs e)
+        private void Paint(object sender, PaintEventArgs e)
         {
             ControlPaint.DrawBorder(e.Graphics, username_pn.ClientRectangle,
             Color.White, 0, ButtonBorderStyle.Solid, // left
-            ColorTranslator.FromHtml("#3a3c4f"), 0, ButtonBorderStyle.Solid, // top
+            ColorTranslator.FromHtml("#3a3c4f"), 3, ButtonBorderStyle.Solid, // top
             Color.DimGray, 0, ButtonBorderStyle.Solid, // right
             ColorTranslator.FromHtml("#3a3c4f"), 3, ButtonBorderStyle.Solid);// bottom
         }
@@ -45,11 +52,23 @@ namespace Project
             {
                 String username = userInput.Text;
                 String pass = passInput.Text;
+                String name = nameInput.Text;
+                String dob = dobInput.Text;
+                String addr = addrInput.Text;
+                String id = "";
+                String balance = "";
 
                 clsDatabase.OpenConnection();
-                SqlCommand query = new SqlCommand("select * from users where username = @username and pass = @pass", clsDatabase.con);
+                SqlCommand query = new SqlCommand("insert into users values ( " +
+                    "@username, @name, @id, @dob, @pass, @addr, @balance)", clsDatabase.con);
+
                 query.Parameters.AddWithValue("username", username);
                 query.Parameters.AddWithValue("pass", pass);
+                query.Parameters.AddWithValue("name", name);
+                query.Parameters.AddWithValue("id", id);
+                query.Parameters.AddWithValue("dob", dob);
+                query.Parameters.AddWithValue("addr", addr);
+                query.Parameters.AddWithValue("balance", balance);
 
                 query.ExecuteNonQuery();
 
@@ -82,7 +101,7 @@ namespace Project
 
         private void forget_Click(object sender, EventArgs e)
         {
-            Register h1 = new Register();
+            Form1 h1 = new Form1();
             h1.Show();
             this.Hide();
         }
