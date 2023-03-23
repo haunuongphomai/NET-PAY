@@ -35,6 +35,9 @@
             username = new TextBox();
             passwdTxt = new Label();
             passwd = new TextBox();
+            loginBtn = new Button();
+            linkRegistxt = new Label();
+            linkRegister = new Label();
             leftSide.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logo).BeginInit();
             SuspendLayout();
@@ -105,6 +108,33 @@
             passwd.Size = new Size(300, 32);
             passwd.TabStop = false;
             passwd.TabIndex = 3;
+            //
+            // Login button
+            //
+            loginBtn.Text = "Login";
+            loginBtn.Size = new Size(100, 40);
+            loginBtn.Location = new Point(550, 380);
+            loginBtn.BackColor = ColorTranslator.FromHtml("#30E3CA");
+            loginBtn.Font = new Font("Bahnschrift", 10F);
+            loginBtn.TabStop = false;
+            loginBtn.FlatStyle = FlatStyle.Flat;
+            loginBtn.FlatAppearance.BorderSize = 0;
+            //
+            // Register text
+            //
+            linkRegistxt.Text = "Don't have account yet?";
+            linkRegistxt.AutoSize = true;
+            linkRegistxt.Location = new Point(575, 330);
+            linkRegistxt.ForeColor = Color.White;
+            linkRegistxt.Font = new Font("Bahnschrift", 9F,FontStyle.Italic);
+            //
+            // Register
+            //
+            linkRegister.Text = "Register";
+            linkRegister.AutoSize = true;
+            linkRegister.Location = new Point(705, 330);
+            linkRegister.Font = new Font("Bahnschrift", 9F, FontStyle.Underline);
+            linkRegister.ForeColor = Color.White;
             // 
             // Login
             // 
@@ -118,8 +148,11 @@
             Controls.Add(username);
             Controls.Add(passwdTxt);
             Controls.Add(passwd);
+            Controls.Add(loginBtn);
+            Controls.Add(linkRegistxt);
+            Controls.Add(linkRegister);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Login";
+            Name = "login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             leftSide.ResumeLayout(false);
@@ -137,5 +170,9 @@
         private TextBox username;
         private Label passwdTxt;
         private TextBox passwd;
+        private Button loginBtn;
+        private Label linkRegistxt;
+        private Label linkRegister;
+
     }
 }

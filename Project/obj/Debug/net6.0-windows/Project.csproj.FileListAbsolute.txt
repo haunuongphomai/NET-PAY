@@ -68,3 +68,4 @@ C:\Users\huynhhao\Documents\.NET\NET-PAY\Project\bin\Debug\net6.0-windows\Projec
 C:\Users\huynhhao\Documents\.NET\NET-PAY\Project\bin\Debug\net6.0-windows\Project.pdb
 C:\Users\huynhhao\Documents\.NET\NET-PAY\Project\obj\Debug\net6.0-windows\Project.genruntimeconfig.cache
 C:\Users\huynhhao\Documents\.NET\NET-PAY\Project\obj\Debug\net6.0-windows\ref\Project.dll
+C:\Users\huynhhao\Documents\.NET\NET-PAY\Project\obj\Debug\net6.0-windows\Project.Register.resources

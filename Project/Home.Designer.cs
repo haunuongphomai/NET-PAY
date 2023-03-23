@@ -247,7 +247,7 @@
             this.Controls.Add(this.qrCodeimg);
             this.Controls.Add(this.qrCode);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Home";
+            this.Name = "home";
             this.Text = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
