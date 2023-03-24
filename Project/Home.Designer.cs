@@ -234,6 +234,8 @@
 
             // Home
             // 
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = ColorTranslator.FromHtml("#393E46");
             this.ClientSize = new System.Drawing.Size(1256, 700);

@@ -42,9 +42,9 @@
             dobInput = new DateTimePicker();
             dob = new Label();
             gender = new Label();
-            male = new RadioButton();
-            female = new RadioButton();
-            passwdInput = new TextBox();
+            maleInput = new RadioButton();
+            femaleInput = new RadioButton();
+            passwordInput = new TextBox();
             leftSide.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logo).BeginInit();
             SuspendLayout();
@@ -54,14 +54,17 @@
             leftSide.BackColor = Color.FromArgb(125, 157, 156);
             leftSide.Controls.Add(logo);
             leftSide.Location = new Point(0, 0);
+            leftSide.Margin = new Padding(4, 4, 4, 4);
             leftSide.Name = "leftSide";
-            leftSide.Size = new Size(400, 500);
+            leftSide.Size = new Size(500, 625);
             leftSide.TabIndex = 0;
             // 
             // logo
             // 
+            logo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             logo.Image = Properties.Resources.logo;
-            logo.Location = new Point(100, 200);
+            logo.Location = new Point(125, 250);
+            logo.Margin = new Padding(4, 4, 4, 4);
             logo.Name = "logo";
             logo.Size = new Size(200, 78);
             logo.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -73,9 +76,10 @@
             registerTxt.AutoSize = true;
             registerTxt.Font = new Font("Bahnschrift", 25F, FontStyle.Bold, GraphicsUnit.Point);
             registerTxt.ForeColor = Color.White;
-            registerTxt.Location = new Point(527, 39);
+            registerTxt.Location = new Point(659, 49);
+            registerTxt.Margin = new Padding(4, 0, 4, 0);
             registerTxt.Name = "registerTxt";
-            registerTxt.Size = new Size(171, 41);
+            registerTxt.Size = new Size(212, 51);
             registerTxt.TabIndex = 1;
             registerTxt.Text = "REGISTER";
             // 
@@ -84,18 +88,20 @@
             name.AutoSize = true;
             name.Font = new Font("Bahnschrift", 15F, FontStyle.Italic, GraphicsUnit.Point);
             name.ForeColor = Color.FromArgb(125, 157, 156);
-            name.Location = new Point(440, 100);
+            name.Location = new Point(550, 125);
+            name.Margin = new Padding(4, 0, 4, 0);
             name.Name = "name";
-            name.Size = new Size(68, 24);
+            name.Size = new Size(84, 30);
             name.TabIndex = 2;
             name.Text = "Name:";
             // 
             // usernameInput
             // 
             usernameInput.Font = new Font("Bahnschrift", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            usernameInput.Location = new Point(450, 130);
+            usernameInput.Location = new Point(562, 162);
+            usernameInput.Margin = new Padding(4, 4, 4, 4);
             usernameInput.Name = "usernameInput";
-            usernameInput.Size = new Size(300, 32);
+            usernameInput.Size = new Size(374, 38);
             usernameInput.TabIndex = 3;
             usernameInput.TabStop = false;
             // 
@@ -104,18 +110,20 @@
             numberPhone.AutoSize = true;
             numberPhone.Font = new Font("Bahnschrift", 15F, FontStyle.Italic, GraphicsUnit.Point);
             numberPhone.ForeColor = Color.FromArgb(125, 157, 156);
-            numberPhone.Location = new Point(440, 166);
+            numberPhone.Location = new Point(550, 208);
+            numberPhone.Margin = new Padding(4, 0, 4, 0);
             numberPhone.Name = "numberPhone";
-            numberPhone.Size = new Size(148, 24);
+            numberPhone.Size = new Size(186, 30);
             numberPhone.TabIndex = 2;
             numberPhone.Text = "Number phone:";
             // 
             // numberPhoneInput
             // 
             numberPhoneInput.Font = new Font("Bahnschrift", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            numberPhoneInput.Location = new Point(450, 196);
+            numberPhoneInput.Location = new Point(562, 245);
+            numberPhoneInput.Margin = new Padding(4, 4, 4, 4);
             numberPhoneInput.Name = "numberPhoneInput";
-            numberPhoneInput.Size = new Size(300, 32);
+            numberPhoneInput.Size = new Size(374, 38);
             numberPhoneInput.TabIndex = 3;
             numberPhoneInput.TabStop = false;
             // 
@@ -125,22 +133,25 @@
             registerBtn.FlatAppearance.BorderSize = 0;
             registerBtn.FlatStyle = FlatStyle.Flat;
             registerBtn.Font = new Font("Bahnschrift", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            registerBtn.Location = new Point(545, 445);
+            registerBtn.Location = new Point(681, 556);
+            registerBtn.Margin = new Padding(4, 4, 4, 4);
             registerBtn.Name = "registerBtn";
-            registerBtn.Size = new Size(100, 40);
+            registerBtn.Size = new Size(125, 50);
             registerBtn.TabIndex = 4;
             registerBtn.TabStop = false;
             registerBtn.Text = "Register";
             registerBtn.UseVisualStyleBackColor = false;
+            registerBtn.Click += registerBtn_Click;
             // 
             // linkLogintxt
             // 
             linkLogintxt.AutoSize = true;
             linkLogintxt.Font = new Font("Bahnschrift", 9F, FontStyle.Italic, GraphicsUnit.Point);
             linkLogintxt.ForeColor = Color.White;
-            linkLogintxt.Location = new Point(564, 413);
+            linkLogintxt.Location = new Point(705, 516);
+            linkLogintxt.Margin = new Padding(4, 0, 4, 0);
             linkLogintxt.Name = "linkLogintxt";
-            linkLogintxt.Size = new Size(145, 14);
+            linkLogintxt.Size = new Size(180, 18);
             linkLogintxt.TabIndex = 5;
             linkLogintxt.Text = "Already have account yet?";
             linkLogintxt.Click += linkRegistxt_Click;
@@ -150,9 +161,10 @@
             linkLogin.AutoSize = true;
             linkLogin.Font = new Font("Bahnschrift", 9F, FontStyle.Underline, GraphicsUnit.Point);
             linkLogin.ForeColor = Color.White;
-            linkLogin.Location = new Point(708, 413);
+            linkLogin.Location = new Point(885, 516);
+            linkLogin.Margin = new Padding(4, 0, 4, 0);
             linkLogin.Name = "linkLogin";
-            linkLogin.Size = new Size(37, 14);
+            linkLogin.Size = new Size(45, 18);
             linkLogin.TabIndex = 6;
             linkLogin.Text = "Login";
             // 
@@ -161,29 +173,32 @@
             password.AutoSize = true;
             password.Font = new Font("Bahnschrift", 15F, FontStyle.Italic, GraphicsUnit.Point);
             password.ForeColor = Color.FromArgb(125, 157, 156);
-            password.Location = new Point(440, 230);
+            password.Location = new Point(550, 288);
+            password.Margin = new Padding(4, 0, 4, 0);
             password.Name = "password";
-            password.Size = new Size(104, 24);
+            password.Size = new Size(130, 30);
             password.TabIndex = 7;
             password.Text = "Password:";
             // 
             // dobInput
             // 
             dobInput.Font = new Font("Bahnschrift Condensed", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            dobInput.Location = new Point(450, 322);
+            dobInput.Location = new Point(562, 402);
+            dobInput.Margin = new Padding(4, 4, 4, 4);
             dobInput.Name = "dobInput";
-            dobInput.Size = new Size(300, 32);
-            dobInput.TabStop = false;
+            dobInput.Size = new Size(374, 38);
             dobInput.TabIndex = 9;
+            dobInput.TabStop = false;
             // 
             // dob
             // 
             dob.AutoSize = true;
             dob.Font = new Font("Bahnschrift", 15F, FontStyle.Italic, GraphicsUnit.Point);
             dob.ForeColor = Color.FromArgb(125, 157, 156);
-            dob.Location = new Point(440, 293);
+            dob.Location = new Point(550, 366);
+            dob.Margin = new Padding(4, 0, 4, 0);
             dob.Name = "dob";
-            dob.Size = new Size(54, 24);
+            dob.Size = new Size(67, 30);
             dob.TabIndex = 10;
             dob.Text = "DOB:";
             // 
@@ -192,56 +207,61 @@
             gender.AutoSize = true;
             gender.Font = new Font("Bahnschrift", 15F, FontStyle.Italic, GraphicsUnit.Point);
             gender.ForeColor = Color.FromArgb(125, 157, 156);
-            gender.Location = new Point(440, 356);
+            gender.Location = new Point(550, 445);
+            gender.Margin = new Padding(4, 0, 4, 0);
             gender.Name = "gender";
-            gender.Size = new Size(80, 24);
+            gender.Size = new Size(97, 30);
             gender.TabIndex = 11;
             gender.Text = "Gender:";
             // 
-            // male
+            // maleInput
             // 
-            male.AutoSize = true;
-            male.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            male.ForeColor = Color.White;
-            male.Location = new Point(491, 384);
-            male.Name = "male";
-            male.Size = new Size(53, 23);
-            male.TabIndex = 12;
-            male.TabStop = true;
-            male.Text = "Male";
-            male.UseVisualStyleBackColor = true;
+            maleInput.AutoSize = true;
+            maleInput.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            maleInput.ForeColor = Color.White;
+            maleInput.Location = new Point(614, 480);
+            maleInput.Margin = new Padding(4, 4, 4, 4);
+            maleInput.Name = "maleInput";
+            maleInput.Size = new Size(63, 28);
+            maleInput.TabIndex = 12;
+            maleInput.TabStop = true;
+            maleInput.Text = "Male";
+            maleInput.UseVisualStyleBackColor = true;
             // 
-            // female
+            // femaleInput
             // 
-            female.AutoSize = true;
-            female.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            female.ForeColor = Color.White;
-            female.Location = new Point(614, 384);
-            female.Name = "female";
-            female.Size = new Size(66, 23);
-            female.TabIndex = 13;
-            female.TabStop = true;
-            female.Text = "Female";
-            female.UseVisualStyleBackColor = true;
+            femaleInput.AutoSize = true;
+            femaleInput.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            femaleInput.ForeColor = Color.White;
+            femaleInput.Location = new Point(768, 480);
+            femaleInput.Margin = new Padding(4, 4, 4, 4);
+            femaleInput.Name = "femaleInput";
+            femaleInput.Size = new Size(80, 28);
+            femaleInput.TabIndex = 13;
+            femaleInput.TabStop = true;
+            femaleInput.Text = "Female";
+            femaleInput.UseVisualStyleBackColor = true;
             // 
-            // passwdInput
+            // passwordInput
             // 
-            passwdInput.Font = new Font("Bahnschrift", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            passwdInput.Location = new Point(450, 258);
-            passwdInput.Name = "passwdInput";
-            passwdInput.Size = new Size(300, 32);
-            passwdInput.TabIndex = 14;
-            passwdInput.TabStop = false;
+            passwordInput.Font = new Font("Bahnschrift", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            passwordInput.Location = new Point(562, 322);
+            passwordInput.Margin = new Padding(4, 4, 4, 4);
+            passwordInput.Name = "passwordInput";
+            passwordInput.PasswordChar = '*';
+            passwordInput.Size = new Size(374, 38);
+            passwordInput.TabIndex = 14;
+            passwordInput.TabStop = false;
             // 
             // Register
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(57, 62, 70);
-            ClientSize = new Size(800, 500);
-            Controls.Add(passwdInput);
-            Controls.Add(female);
-            Controls.Add(male);
+            ClientSize = new Size(1000, 625);
+            Controls.Add(passwordInput);
+            Controls.Add(femaleInput);
+            Controls.Add(maleInput);
             Controls.Add(gender);
             Controls.Add(dob);
             Controls.Add(dobInput);
@@ -256,6 +276,7 @@
             Controls.Add(linkLogintxt);
             Controls.Add(linkLogin);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 4, 4, 4);
             Name = "Register";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Register";
@@ -282,8 +303,8 @@
         private DateTimePicker dobInput;
         private Label dob;
         private Label gender;
-        private RadioButton male;
-        private RadioButton female;
-        private TextBox passwdInput;
+        private RadioButton maleInput;
+        private RadioButton femaleInput;
+        private TextBox passwordInput;
     }
 }

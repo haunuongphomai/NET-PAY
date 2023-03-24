@@ -32,9 +32,9 @@
             logo = new PictureBox();
             loginTxt = new Label();
             usernameTxt = new Label();
-            username = new TextBox();
+            usernameInput = new TextBox();
             passwdTxt = new Label();
-            passwd = new TextBox();
+            passwordInput = new TextBox();
             loginBtn = new Button();
             linkRegistxt = new Label();
             linkRegister = new Label();
@@ -68,6 +68,7 @@
             loginTxt.ForeColor = Color.White;
             loginTxt.Location = new Point(544, 50);
             loginTxt.Name = "loginTxt";
+            loginTxt.Size = new Size(112, 41);
             loginTxt.TabIndex = 1;
             loginTxt.Text = "LOGIN";
             // 
@@ -78,81 +79,95 @@
             usernameTxt.ForeColor = Color.FromArgb(125, 157, 156);
             usernameTxt.Location = new Point(440, 160);
             usernameTxt.Name = "usernameTxt";
-            usernameTxt.Text = "Username:";
+            usernameTxt.Size = new Size(108, 24);
             usernameTxt.TabIndex = 2;
+            usernameTxt.Text = "Username:";
             // 
-            // username
+            // usernameInput
             // 
-            username.Font = new Font("Bahnschrift", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            username.Location = new Point(450, 200);
-            username.Name = "username";
-            username.Size = new Size(300, 32);
-            username.TabStop = false;
-            username.TabIndex = 3;
+            usernameInput.Font = new Font("Bahnschrift", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            usernameInput.Location = new Point(450, 200);
+            usernameInput.Name = "usernameInput";
+            usernameInput.Size = new Size(300, 32);
+            usernameInput.TabIndex = 3;
+            usernameInput.TabStop = false;
             // 
-            // passwordTxt
+            // passwdTxt
             // 
             passwdTxt.AutoSize = true;
             passwdTxt.Font = new Font("Bahnschrift", 15F, FontStyle.Italic, GraphicsUnit.Point);
             passwdTxt.ForeColor = Color.FromArgb(125, 157, 156);
             passwdTxt.Location = new Point(440, 250);
             passwdTxt.Name = "passwdTxt";
-            passwdTxt.Text = "Password:";
+            passwdTxt.Size = new Size(104, 24);
             passwdTxt.TabIndex = 2;
+            passwdTxt.Text = "Password:";
             // 
-            // password
+            // passwordInput
             // 
-            passwd.Font = new Font("Bahnschrift", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            passwd.Location = new Point(450, 290);
-            passwd.Name = "passwd";
-            passwd.Size = new Size(300, 32);
-            passwd.TabStop = false;
-            passwd.TabIndex = 3;
-            //
-            // Login button
-            //
-            loginBtn.Text = "Login";
-            loginBtn.Size = new Size(100, 40);
-            loginBtn.Location = new Point(550, 380);
-            loginBtn.BackColor = ColorTranslator.FromHtml("#30E3CA");
-            loginBtn.Font = new Font("Bahnschrift", 10F);
-            loginBtn.TabStop = false;
-            loginBtn.FlatStyle = FlatStyle.Flat;
+            passwordInput.Font = new Font("Bahnschrift", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            passwordInput.Location = new Point(450, 290);
+            passwordInput.Name = "passwordInput";
+            passwordInput.Size = new Size(300, 32);
+            passwordInput.TabIndex = 3;
+            passwordInput.TabStop = false;
+            passwordInput.PasswordChar = '*';
+            // 
+            // loginBtn
+            // 
+            loginBtn.BackColor = Color.FromArgb(48, 227, 202);
             loginBtn.FlatAppearance.BorderSize = 0;
-            //
-            // Register text
-            //
-            linkRegistxt.Text = "Don't have account yet?";
+            loginBtn.FlatStyle = FlatStyle.Flat;
+            loginBtn.Font = new Font("Bahnschrift", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            loginBtn.Location = new Point(550, 380);
+            loginBtn.Name = "loginBtn";
+            loginBtn.Size = new Size(100, 40);
+            loginBtn.TabIndex = 4;
+            loginBtn.TabStop = false;
+            loginBtn.Text = "Login";
+            loginBtn.UseVisualStyleBackColor = false;
+            loginBtn.Click += loginBtn_Click;
+            // 
+            // linkRegistxt
+            // 
             linkRegistxt.AutoSize = true;
-            linkRegistxt.Location = new Point(575, 330);
+            linkRegistxt.Font = new Font("Bahnschrift", 9F, FontStyle.Italic, GraphicsUnit.Point);
             linkRegistxt.ForeColor = Color.White;
-            linkRegistxt.Font = new Font("Bahnschrift", 9F,FontStyle.Italic);
-            //
-            // Register
-            //
-            linkRegister.Text = "Register";
+            linkRegistxt.Location = new Point(575, 330);
+            linkRegistxt.Name = "linkRegistxt";
+            linkRegistxt.Size = new Size(133, 14);
+            linkRegistxt.TabIndex = 5;
+            linkRegistxt.Text = "Don't have account yet?";
+            // 
+            // linkRegister
+            // 
             linkRegister.AutoSize = true;
-            linkRegister.Location = new Point(705, 330);
-            linkRegister.Font = new Font("Bahnschrift", 9F, FontStyle.Underline);
+            linkRegister.Font = new Font("Bahnschrift", 9F, FontStyle.Underline, GraphicsUnit.Point);
             linkRegister.ForeColor = Color.White;
+            linkRegister.Location = new Point(705, 330);
+            linkRegister.Name = "linkRegister";
+            linkRegister.Size = new Size(51, 14);
+            linkRegister.TabIndex = 6;
+            linkRegister.Text = "Register";
+            linkRegister.Click += linkRegister_Click;
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(57, 62, 70);
             ClientSize = new Size(800, 500);
             Controls.Add(leftSide);
             Controls.Add(loginTxt);
             Controls.Add(usernameTxt);
-            Controls.Add(username);
+            Controls.Add(usernameInput);
             Controls.Add(passwdTxt);
-            Controls.Add(passwd);
+            Controls.Add(passwordInput);
             Controls.Add(loginBtn);
             Controls.Add(linkRegistxt);
             Controls.Add(linkRegister);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "login";
+            Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             leftSide.ResumeLayout(false);
@@ -167,9 +182,9 @@
         private PictureBox logo;
         private Label loginTxt;
         private Label usernameTxt;
-        private TextBox username;
+        private TextBox usernameInput;
         private Label passwdTxt;
-        private TextBox passwd;
+        private TextBox passwordInput;
         private Button loginBtn;
         private Label linkRegistxt;
         private Label linkRegister;
