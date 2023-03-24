@@ -2,14 +2,19 @@ use project;
 
 create table users (
 	username nvarchar(30),
-	name nvarchar(30),
-	id nvarchar(30),
+	phone nvarchar(30),
 	dob date,
 	pass nvarchar(30),
-	addr nvarchar(30),
 	accBalance bigInt,
+	gender bit
 )
 
-insert into users values ('phuc', 'phuc', 1, '05/05/2001', '123', 'Can Tho', 15000000);
+insert into users values ('phuc', '0915692401', '05/05/2001', '123', 15000000, 1);
 
 select * from users where username = 'phuc' and pass = '123';
+
+select count(*) from users where username = 'phuc' and pass = '123'
+
+select * from users;
+
+delete from users where pass = '4'
