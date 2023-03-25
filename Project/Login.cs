@@ -1,4 +1,5 @@
 ﻿using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace Project
 {
@@ -7,6 +8,22 @@ namespace Project
         public Login()
         {
             InitializeComponent();
+        }
+
+        public void getInfor(String username, String pass)
+        {
+            clsDatabase.OpenConnection();
+            SqlCommand query = new SqlCommand("select * from users where username = @username and pass = @pass", clsDatabase.con);
+            query.Parameters.AddWithValue("username", username);
+            query.Parameters.AddWithValue("pass", pass);
+
+            var reader = query.ExecuteReader();
+
+            reader.Read();
+            acc.Instance.getUsername = Convert.ToString(reader["username"]);
+            acc.Instance.getBalance = Convert.ToString(reader["accBalance"]);
+            acc.Instance.getPhone = Convert.ToString(reader["phone"]);
+
         }
 
         private void loginBtn_Click(object sender, EventArgs e)
@@ -28,6 +45,7 @@ namespace Project
 
                 if (res > 0)
                 {
+                    getInfor(username, password);
                     Home h = new Home();
                     h.Show();
                     this.Hide();
