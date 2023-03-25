@@ -28,233 +28,172 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.actionBar = new Panel();
-            this.btnPanel = new Panel();
-            this.header = new Panel();
-            this.btnAvatar = new Button();
-            this.logo = new PictureBox();
-            this.greeting = new Label();
-            this.creditCard = new PictureBox();
-            this.nameCard = new Label();
-            this.visa = new Label();
-            this.creditcardBehind = new PictureBox();
-            this.seriId = new Label();
-            this.accountId = new Label();
-            this.accountName = new Label();
-            this.startDay = new Label();
-            this.cvv = new Label();
-            this.balanced = new Label();
-            this.name = new Label();
-            this.id = new Label();
-            this.search = new TextBox();
-            this.qrCodeimg = new PictureBox();
-            this.qrCode = new Label();
-            this.SuspendLayout();
+            actionBar = new Panel();
+            btnPanel = new Panel();
+            btnTransaction = new Button();
+            btnHistory = new Button();
+            btnExit = new Button();
+            btnHome = new Button();
+            logo = new PictureBox();
+            header = new Panel();
+            lblGreeting = new Label();
+            btnAvatar = new Button();
+            search = new TextBox();
+            voidPanel = new Panel();
+            actionBar.SuspendLayout();
+            btnPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)logo).BeginInit();
+            header.SuspendLayout();
+            SuspendLayout();
             // 
             // actionBar
             // 
-            this.actionBar.BackColor = ColorTranslator.FromHtml("#7D9D9C");
-            this.actionBar.Location = new Point(0, 0);
-            this.actionBar.Size = new Size(272, 700);
-            this.actionBar.Controls.Add(btnPanel);
-            this.actionBar.Controls.Add(logo);
-            //
-            // Panel content button
-            //
-            this.btnPanel.BackColor = ColorTranslator.FromHtml("#CBE4DE");
-            this.btnPanel.Size = new Size(272, 502);
-            this.btnPanel.Location = new Point(0, 198);
-            //
-            // Header
-            //
-            this.header.BackColor = ColorTranslator.FromHtml("#222831");
-            this.header.Size = new Size(984, 58);
-            this.header.Location = new Point(272, 0);
-            this.header.Controls.Add(greeting);
-            this.header.Controls.Add(btnAvatar);
-            this.header.Controls.Add(search);
-            //
-            // btnAvatar
-            //
-            this.btnAvatar.Size = new Size(50, 50);
-            this.btnAvatar.Location = new Point(10, 4);
-            this.btnAvatar.FlatStyle = FlatStyle.Flat;
-            this.btnAvatar.FlatAppearance.BorderSize = 0;
-            this.btnAvatar.BackColor = Color.Transparent;
-            Image image = Properties.Resources.avatar;
-            this.btnAvatar.Image = image;
-            //
-            // Logo
-            //
-            this.logo.SizeMode = PictureBoxSizeMode.AutoSize;
-            this.logo.BackColor = Color.Transparent;
-            this.logo.Location = new Point(36, 50);
-            this.logo.Image = Properties.Resources.logo;
-            //
-            // Greeting
-            //
-            this.greeting.AutoSize = true;
-            this.greeting.Text = "Hi Hao, Welcome to NET PAYPAL!";
-            this.greeting.Font = new Font("Bahnschrift", 16);
-            this.greeting.Location = new Point(60, 15);
-            this.greeting.ForeColor = Color.White;
-            this.greeting.BackColor = Color.Transparent;
-            //
-            // Credit card
-            //
-            this.creditCard.SizeMode = PictureBoxSizeMode.AutoSize;
-            this.creditCard.BackColor = ColorTranslator.FromHtml("#393E46");
-            this.creditCard.Location = new Point(300, 100);
-            this.creditCard.Image = Properties.Resources.creditcard;
-            this.creditCard.Controls.Add(nameCard);
-            this.creditCard.Controls.Add(visa);
-            //
-            // Name of credit card
-            //
-            this.nameCard.Text = "NET PAYPAL";
-            this.nameCard.AutoSize = true;
-            this.nameCard.Font = new Font("Bahnschrift", 13, FontStyle.Bold);
-            this.nameCard.ForeColor = Color.White;
-            this.nameCard.Location = new Point(10, 10);
-            this.nameCard.BackColor = Color.Transparent;
-            //
-            // Visa
-            //
-            this.visa.Text = "VISA";
-            this.visa.AutoSize = true;
-            this.visa.Font = new Font("Bahnschrift", 15, FontStyle.Bold);
-            this.visa.ForeColor = Color.White;
-            this.visa.Location = new Point(355, 200);
-            this.visa.BackColor = Color.Transparent;
-            //
-            // Credit card behind
-            //
-            this.creditcardBehind.SizeMode = PictureBoxSizeMode.AutoSize;
-            this.creditcardBehind.BackColor = ColorTranslator.FromHtml("#393E46");
-            this.creditcardBehind.Location = new Point(815, 100);
-            this.creditcardBehind.Image = Properties.Resources.creditcard;
-            this.creditcardBehind.Controls.Add(this.seriId);
-            this.creditcardBehind.Controls.Add(this.accountId);
-            this.creditcardBehind.Controls.Add(this.accountName);
-            this.creditcardBehind.Controls.Add(this.startDay);
-            this.creditcardBehind.Controls.Add(this.cvv);
-            //
-            // Seri into credit card
-            //
-            this.seriId.Size = new Size(412, 38);
-            this.seriId.BackColor = ColorTranslator.FromHtml("#D9D9D9");
-            this.seriId.Location = new Point(0, 50);
-            //
-            // Account ID
-            //
-            this.accountId.AutoSize = true;
-            this.accountId.Text = "Account ID:";
-            this.accountId.Location = new Point(10, 100);
-            this.accountId.BackColor = Color.Transparent;
-            this.accountId.ForeColor = Color.White;
-            this.accountId.Font = new Font("Bahnschrift", 12, FontStyle.Italic);
-            //
-            // Account name
-            //
-            this.accountName.AutoSize = true;
-            this.accountName.Text = "Name:";
-            this.accountName.Location = new Point(10, 130);
-            this.accountName.BackColor = Color.Transparent;
-            this.accountName.ForeColor = Color.White;
-            this.accountName.Font = new Font("Bahnschrift", 12, FontStyle.Bold);
-            //
-            // Start day
-            //
-            this.startDay.AutoSize = true;
-            this.startDay.Text = "Expired" + Environment.NewLine
-                + "End:";
-            this.startDay.Location = new Point(10, 180);
-            this.startDay.BackColor = Color.Transparent;
-            this.startDay.ForeColor = Color.White;
-            this.startDay.Font = new Font("Bahnschrift", 8, FontStyle.Bold);
-            //
-            // CVV
-            //
-            this.cvv.AutoSize = true;
-            this.cvv.Text = "CVV:";
-            this.cvv.Location = new Point(150, 190);
-            this.cvv.BackColor = Color.Transparent;
-            this.cvv.ForeColor = Color.White;
-            this.cvv.Font = new Font("Bahnschrift", 8, FontStyle.Italic);
-            //
-            // Balanced
-            //
-            this.balanced.AutoSize = true;
-            this.balanced.Text = "Balanced:";
-            this.balanced.Location = new Point(300, 400);
-            this.balanced.BackColor = Color.Transparent;
-            this.balanced.ForeColor = Color.White;
-            this.balanced.Font = new Font("Bahnschrift", 20, FontStyle.Bold);
-            //
-            // Name
-            //
-            this.name.AutoSize = true;
-            this.name.Text = "Name:";
-            this.name.Location = new Point(300, 480);
-            this.name.BackColor = Color.Transparent;
-            this.name.ForeColor = Color.White;
-            this.name.Font = new Font("Bahnschrift", 20, FontStyle.Bold);
-            //
-            // ID
-            //
-            this.id.AutoSize = true;
-            this.id.Text = "Account ID:";
-            this.id.Location = new Point(300, 560);
-            this.id.BackColor = Color.Transparent;
-            this.id.ForeColor = Color.White;
-            this.id.Font = new Font("Bahnschrift", 20, FontStyle.Bold);
-            //
-            // Search field
-            //
-            this.search.Text = "Search";
-            this.search.ForeColor = ColorTranslator.FromHtml("#999999");
-            this.search.Size = new Size(350, 100);
-            this.search.Location = new Point(605, 15);
-            this.search.Font = new Font("Bahnschrift", 13);
-            //
-            // QR Code image
-            //
-            this.qrCodeimg.Size = new Size(230, 230);
-            this.qrCodeimg.BackColor = Color.White;
-            this.qrCodeimg.Location = new Point(815, 380);
-            this.qrCodeimg.Image = Properties.Resources.qrcode;
-            //
-            // QR Code
+            actionBar.BackColor = Color.FromArgb(125, 157, 156);
+            actionBar.Controls.Add(btnPanel);
+            actionBar.Controls.Add(logo);
+            actionBar.Location = new Point(0, 0);
+            actionBar.Name = "actionBar";
+            actionBar.Size = new Size(272, 700);
+            actionBar.TabIndex = 0;
             // 
-            this.qrCode.AutoSize = true;
-            this.qrCode.Text = "Your QR Code";
-            this.qrCode.Location = new Point(840, 630);
-            this.qrCode.ForeColor = Color.White;
-            this.qrCode.Font = new Font("Bahnschrift", 20);
-
+            // btnPanel
+            // 
+            btnPanel.BackColor = Color.FromArgb(203, 228, 222);
+            btnPanel.Controls.Add(btnTransaction);
+            btnPanel.Controls.Add(btnHistory);
+            btnPanel.Controls.Add(btnExit);
+            btnPanel.Controls.Add(btnHome);
+            btnPanel.Location = new Point(0, 198);
+            btnPanel.Name = "btnPanel";
+            btnPanel.Size = new Size(272, 502);
+            btnPanel.TabIndex = 0;
+            // 
+            // btnTransaction
+            // 
+            btnTransaction.Location = new Point(83, 76);
+            btnTransaction.Name = "btnTransaction";
+            btnTransaction.Size = new Size(94, 29);
+            btnTransaction.TabIndex = 3;
+            btnTransaction.Text = "Transaction";
+            btnTransaction.UseVisualStyleBackColor = true;
+            btnTransaction.Click += btnTransaction_Click;
+            // 
+            // btnHistory
+            // 
+            btnHistory.Location = new Point(83, 121);
+            btnHistory.Name = "btnHistory";
+            btnHistory.Size = new Size(94, 29);
+            btnHistory.TabIndex = 2;
+            btnHistory.Text = "History";
+            btnHistory.UseVisualStyleBackColor = true;
+            btnHistory.Click += btnTest_Click;
+            // 
+            // btnExit
+            // 
+            btnExit.Location = new Point(83, 444);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(94, 29);
+            btnExit.TabIndex = 1;
+            btnExit.Text = "Exit";
+            btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
+            // 
+            // btnHome
+            // 
+            btnHome.Location = new Point(83, 32);
+            btnHome.Name = "btnHome";
+            btnHome.Size = new Size(94, 29);
+            btnHome.TabIndex = 0;
+            btnHome.Text = "Home";
+            btnHome.UseVisualStyleBackColor = true;
+            btnHome.Click += btnHome_Click;
+            // 
+            // logo
+            // 
+            logo.BackColor = Color.Transparent;
+            logo.Image = Properties.Resources.logo;
+            logo.Location = new Point(36, 50);
+            logo.Name = "logo";
+            logo.Size = new Size(200, 78);
+            logo.SizeMode = PictureBoxSizeMode.AutoSize;
+            logo.TabIndex = 1;
+            logo.TabStop = false;
+            // 
+            // header
+            // 
+            header.BackColor = Color.FromArgb(34, 40, 49);
+            header.Controls.Add(lblGreeting);
+            header.Controls.Add(btnAvatar);
+            header.Controls.Add(search);
+            header.Location = new Point(272, 0);
+            header.Name = "header";
+            header.Size = new Size(984, 58);
+            header.TabIndex = 1;
+            // 
+            // lblGreeting
+            // 
+            lblGreeting.AutoSize = true;
+            lblGreeting.BackColor = Color.Transparent;
+            lblGreeting.Font = new Font("Bahnschrift", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            lblGreeting.ForeColor = Color.White;
+            lblGreeting.Location = new Point(60, 15);
+            lblGreeting.Name = "lblGreeting";
+            lblGreeting.Size = new Size(364, 33);
+            lblGreeting.TabIndex = 0;
+            lblGreeting.Text = "Hi , Welcome to NET PAYPAL!";
+            // 
+            // btnAvatar
+            // 
+            btnAvatar.BackColor = Color.Transparent;
+            btnAvatar.FlatAppearance.BorderSize = 0;
+            btnAvatar.FlatStyle = FlatStyle.Flat;
+            btnAvatar.Image = Properties.Resources.avatar;
+            btnAvatar.Location = new Point(10, 4);
+            btnAvatar.Name = "btnAvatar";
+            btnAvatar.Size = new Size(50, 50);
+            btnAvatar.TabIndex = 1;
+            btnAvatar.UseVisualStyleBackColor = false;
+            // 
+            // search
+            // 
+            search.Font = new Font("Bahnschrift", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            search.ForeColor = Color.FromArgb(153, 153, 153);
+            search.Location = new Point(605, 15);
+            search.Name = "search";
+            search.Size = new Size(350, 34);
+            search.TabIndex = 2;
+            search.Enter += search_Enter;
+            search.Leave += search_Leave;
+            // 
+            // voidPanel
+            // 
+            voidPanel.ImeMode = ImeMode.Katakana;
+            voidPanel.Location = new Point(272, 58);
+            voidPanel.Name = "voidPanel";
+            voidPanel.Size = new Size(984, 642);
+            voidPanel.TabIndex = 2;
+            // 
             // Home
             // 
-            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = ColorTranslator.FromHtml("#393E46");
-            this.ClientSize = new System.Drawing.Size(1256, 700);
-            this.Controls.Add(this.actionBar);
-            this.Controls.Add(this.header);
-            this.Controls.Add(this.creditCard);
-            this.Controls.Add(this.creditcardBehind);
-            this.Controls.Add(this.balanced);
-            this.Controls.Add(this.name);
-            this.Controls.Add(this.id);
-            this.Controls.Add(this.qrCodeimg);
-            this.Controls.Add(this.qrCode);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "home";
-            this.Text = "Home";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.ResumeLayout(false);
-
-
+            BackColor = Color.FromArgb(57, 62, 70);
+            ClientSize = new Size(1256, 700);
+            Controls.Add(voidPanel);
+            Controls.Add(actionBar);
+            Controls.Add(header);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "Home";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Home";
+            Load += Home_Load;
+            actionBar.ResumeLayout(false);
+            actionBar.PerformLayout();
+            btnPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)logo).EndInit();
+            header.ResumeLayout(false);
+            header.PerformLayout();
+            ResumeLayout(false);
         }
 
         private Panel actionBar;
@@ -262,23 +201,14 @@
         private Panel header;
         private Button btnAvatar;
         private PictureBox logo;
-        private Label greeting;
-        private PictureBox creditCard;
-        private Label nameCard;
-        private Label visa;
-        private PictureBox creditcardBehind;
-        private Label seriId;
-        private Label accountId;
-        private Label accountName;
-        private Label startDay;
-        private Label cvv;
-        private Label balanced;
-        private Label name;
-        private Label id;
+        private Label lblGreeting;
         private TextBox search;
-        private PictureBox qrCodeimg;
-        private Label qrCode;
 
         #endregion
+        private Button btnHome;
+        private Button btnHistory;
+        private Button btnExit;
+        private Panel voidPanel;
+        private Button btnTransaction;
     }
 }
