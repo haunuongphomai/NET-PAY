@@ -27,12 +27,9 @@ namespace Project
             InitializeComponent();
         }
 
-        public String setBalance
+        public void update(String newString)
         {
-            set
-            { 
-                lblBalance.Text = value;
-            }
+            lblBalance.Text = newString;
         }
     }
 }
