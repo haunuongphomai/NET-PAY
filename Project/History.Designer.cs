@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             label1 = new Label();
+            historyTable = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)historyTable).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -36,20 +38,32 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(456, 264);
+            label1.Location = new Point(24, 26);
             label1.Name = "label1";
-            label1.Size = new Size(97, 46);
+            label1.Size = new Size(304, 46);
             label1.TabIndex = 0;
-            label1.Text = "Test3";
+            label1.Text = "Transaction History";
+            // 
+            // historyTable
+            // 
+            historyTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            historyTable.Location = new Point(24, 88);
+            historyTable.Name = "historyTable";
+            historyTable.RowHeadersWidth = 51;
+            historyTable.RowTemplate.Height = 29;
+            historyTable.Size = new Size(940, 188);
+            historyTable.TabIndex = 1;
             // 
             // History
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(57, 62, 70);
+            Controls.Add(historyTable);
             Controls.Add(label1);
             Name = "History";
             Size = new Size(984, 642);
+            ((System.ComponentModel.ISupportInitialize)historyTable).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -57,5 +71,6 @@
         #endregion
 
         private Label label1;
+        private DataGridView historyTable;
     }
 }

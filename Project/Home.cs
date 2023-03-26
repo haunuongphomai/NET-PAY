@@ -13,6 +13,7 @@ namespace Project
     public partial class Home : Form
     {
         static Home obj;
+        private HomePanel myHomePanel = new HomePanel();
 
         public static Home instnace
         {
@@ -71,7 +72,7 @@ namespace Project
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            
+            myHomePanel.update(acc.Instance.getBalance);
             Container.Controls["HomePanel"].BringToFront();
         }
 

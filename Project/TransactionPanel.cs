@@ -97,6 +97,17 @@ namespace Project
                 query2.Parameters.AddWithValue("money", acc.Instance.getBalance);
                 query2.ExecuteNonQuery();
 
+                SqlCommand query3 = new SqlCommand("insert into history values (@username1, @phone1, getdate(), 'send', @username1, @receiver, @money), " +
+                    "(@username2, @phone2, getDate(), 'receive', @username1, @receiver, @money)", clsDatabase.con);
+                query3.Parameters.AddWithValue("username1", acc.Instance.getUsername);
+                query3.Parameters.AddWithValue("phone1", acc.Instance.getPhone);
+                query3.Parameters.AddWithValue("receiver", nameOutput.Text);
+                query3.Parameters.AddWithValue("money", txtMoney.Text);
+                query3.Parameters.AddWithValue("username2", nameOutput.Text);
+                query3.Parameters.AddWithValue("phone2", txtPhone.Text);
+
+                query3.ExecuteNonQuery();
+
                 MessageBox.Show("Successfully transfered money!", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 clsDatabase.CloseConnection();
