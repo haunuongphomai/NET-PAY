@@ -23,6 +23,9 @@ namespace Project
             acc.Instance.getUsername = Convert.ToString(reader["username"]);
             acc.Instance.getBalance = Convert.ToString(reader["accBalance"]);
             acc.Instance.getPhone = Convert.ToString(reader["phone"]);
+            acc.Instance.getPassword = Convert.ToString(reader["pass"]);
+            acc.Instance.getDOB = Convert.ToString(reader["dob"]);
+            acc.Instance.getGender = Convert.ToInt32(reader["gender"]);
 
         }
 

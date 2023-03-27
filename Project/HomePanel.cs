@@ -25,11 +25,18 @@ namespace Project
         public HomePanel()
         {
             InitializeComponent();
+            getInfor();
+            
         }
 
         public void update(String newString)
         {
             lblBalance.Text = newString;
+        }
+
+        public void getInfor()
+        {
+            lblBalance.Text = string.Format("{0:n}", double.Parse(acc.Instance.getBalance));
         }
     }
 }
