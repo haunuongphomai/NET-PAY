@@ -13,6 +13,19 @@ namespace Project
         public String password;
         public String balance;
         public String phone;
+        public String dob;
+        public int gender;
+
+        public int getGender { 
+            get { return gender; }
+            set { gender = value; }
+        }
+
+        public string getDOB
+        {
+            get { return dob; }
+            set { dob = value; }
+        }
 
         public string getUsername
         {

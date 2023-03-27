@@ -30,6 +30,7 @@
         {
             label1 = new Label();
             historyTable = new DataGridView();
+            btnExport = new Button();
             ((System.ComponentModel.ISupportInitialize)historyTable).BeginInit();
             SuspendLayout();
             // 
@@ -54,11 +55,23 @@
             historyTable.Size = new Size(940, 188);
             historyTable.TabIndex = 1;
             // 
+            // btnExport
+            // 
+            btnExport.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnExport.Location = new Point(366, 520);
+            btnExport.Name = "btnExport";
+            btnExport.Size = new Size(258, 55);
+            btnExport.TabIndex = 4;
+            btnExport.Text = "Export";
+            btnExport.UseVisualStyleBackColor = true;
+            btnExport.Click += btnExport_Click;
+            // 
             // History
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(57, 62, 70);
+            Controls.Add(btnExport);
             Controls.Add(historyTable);
             Controls.Add(label1);
             Name = "History";
@@ -72,5 +85,6 @@
 
         private Label label1;
         private DataGridView historyTable;
+        private Button btnExport;
     }
 }
