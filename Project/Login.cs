@@ -26,6 +26,7 @@ namespace Project
             acc.Instance.getPassword = Convert.ToString(reader["pass"]);
             acc.Instance.getDOB = Convert.ToString(reader["dob"]);
             acc.Instance.getGender = Convert.ToInt32(reader["gender"]);
+            acc.Instance.getEmail = Convert.ToString(reader["email"]);
 
         }
 

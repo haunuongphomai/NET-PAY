@@ -5,6 +5,9 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,6 +32,9 @@ namespace Project
             InitializeComponent();
         }
 
+        Random randos = new Random();
+        int otp;
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             try
@@ -50,6 +56,10 @@ namespace Project
                     nameOutput.Show();
                     txtMoney.Show();
                     btnEnter.Show();
+                    lblOtp.Show();
+                    txtOtp.Show();
+                    btnOtp.Show();
+                    txtOtp.ReadOnly = true;
                 }
                 else
                 {
@@ -69,6 +79,9 @@ namespace Project
             nameOutput.Hide();
             txtMoney.Hide();
             btnEnter.Hide();
+            txtOtp.Hide();
+            lblOtp.Hide();
+            btnOtp.Hide();
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
@@ -76,11 +89,17 @@ namespace Project
             if (txtMoney.Text == "")
             {
                 MessageBox.Show("Money cannot be empty!", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            } else if (Convert.ToInt32(acc.Instance.getBalance) < Convert.ToInt32(txtMoney.Text))
+            }
+            else if (Convert.ToInt32(acc.Instance.getBalance) < Convert.ToInt32(txtMoney.Text))
             {
                 MessageBox.Show("Exceed the current balance!", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (Convert.ToInt32(txtOtp.Text) != otp)
+            {
+                MessageBox.Show("OTP code is incorrect!", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
             } else
             {
+
                 int send = Convert.ToInt32(acc.Instance.getBalance) - Convert.ToInt32(txtMoney.Text);
                 acc.Instance.getBalance = Convert.ToString(send);
 
@@ -112,7 +131,43 @@ namespace Project
 
                 clsDatabase.CloseConnection();
                 receive = 0;
+
+                txtOtp.Text = "";
+                txtOtp.ReadOnly = true;
             }
+        }
+
+        private void btnOtp_Click(object sender, EventArgs e)
+        {
+            otp = randos.Next(100000, 1000000);
+            var fromAddress = new MailAddress("netpaycompanyvn@gmail.com");
+            var toAddress = new MailAddress(acc.Instance.getEmail);
+            const string frompass = "hfgzikchagrvpmkm";
+            const string subject = "OTP code";
+            string body = otp.ToString();
+
+            var smtp = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromAddress.Address, frompass),
+                Timeout = 200000,
+                EnableSsl = true,
+            };
+
+            using (var message = new MailMessage(fromAddress, toAddress)
+            {
+                Subject = subject,
+                Body = body
+            })
+            {
+                smtp.Send(message);
+            };
+            MessageBox.Show("OTP has been sent to your email");
+
+            txtOtp.ReadOnly = false;
         }
     }
 }

@@ -47,36 +47,53 @@ namespace Project
                 String name = usernameInput.Text.ToString();
                 String pass = passwordInput.Text.ToString();
                 String phone = numberPhoneInput.Text.ToString();
+                String email = emailInput.Text.ToString();
+
                 int gender = isGender();
 
                 if (!isPhoneMatch(phone) || phone == "")
                 {
                     MessageBox.Show("Phone input incorrect!", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                } 
-                else if (name == "") 
+                }
+                else if (name == "")
                 {
                     MessageBox.Show("Name cannot be empty!", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else if (pass == "")
                 {
                     MessageBox.Show("Password cannot be empty!", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                } else if (!isPass(name, pass))
+                }
+                else if (!isPass(name, pass))
                 {
                     MessageBox.Show("Name and password have already been used!", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                } else if (!isPhone(phone))
+                }
+                else if (!isPhone(phone))
                 {
                     MessageBox.Show("Phone have already been used!", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (email == "")
+                {
+                    MessageBox.Show("Email cannot be empty!", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
 
                     clsDatabase.OpenConnection();
-                    SqlCommand query = new SqlCommand("insert into users values (@name, @phone, @dob, @pass, 1000000, @gender)", clsDatabase.con);
+                    SqlCommand query = new SqlCommand("insert into users values (@name, @phone, @dob, @pass, 1000000, @gender, @email)", clsDatabase.con);
                     query.Parameters.AddWithValue("name", name);
                     query.Parameters.AddWithValue("pass", pass);
                     query.Parameters.AddWithValue("phone", phone);
                     query.Parameters.Add("@dob", SqlDbType.Date).Value = dobInput.Value.Date;
                     query.Parameters.AddWithValue("gender", gender);
+                    query.Parameters.AddWithValue("email", email);
+
+                    acc.Instance.getUsername = usernameInput.Text;
+                    acc.Instance.getBalance = "1000000";
+                    acc.Instance.getPhone = numberPhoneInput.Text;
+                    acc.Instance.getPassword = passwordInput.Text;
+                    acc.Instance.getDOB = dobInput.Text;
+                    acc.Instance.getGender = gender;
+                    acc.Instance.getEmail = emailInput.Text;
 
                     query.ExecuteNonQuery();
 
@@ -126,7 +143,7 @@ namespace Project
             SqlCommand query = new SqlCommand("select count(*) from users where pass = @pass and username = @username", clsDatabase.con);
             query.Parameters.AddWithValue("pass", pass);
             query.Parameters.AddWithValue("username", username);
-            
+
             object temp = query.ExecuteScalar();
             int res = Convert.ToInt32(temp);
             if (res > 0)

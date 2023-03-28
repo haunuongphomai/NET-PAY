@@ -36,6 +36,9 @@
             txtMoney = new TextBox();
             btnSearch = new Button();
             nameOutput = new Label();
+            btnOtp = new Button();
+            txtOtp = new TextBox();
+            lblOtp = new Label();
             SuspendLayout();
             // 
             // lblPhone
@@ -120,11 +123,44 @@
             nameOutput.TabIndex = 8;
             nameOutput.Text = "label1";
             // 
+            // btnOtp
+            // 
+            btnOtp.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnOtp.Location = new Point(506, 256);
+            btnOtp.Name = "btnOtp";
+            btnOtp.Size = new Size(112, 34);
+            btnOtp.TabIndex = 9;
+            btnOtp.Text = "Get OTP";
+            btnOtp.UseVisualStyleBackColor = true;
+            btnOtp.Click += btnOtp_Click;
+            // 
+            // txtOtp
+            // 
+            txtOtp.Font = new Font("Bahnschrift", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txtOtp.Location = new Point(169, 256);
+            txtOtp.Name = "txtOtp";
+            txtOtp.Size = new Size(306, 34);
+            txtOtp.TabIndex = 11;
+            // 
+            // lblOtp
+            // 
+            lblOtp.AutoSize = true;
+            lblOtp.Font = new Font("Bahnschrift", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            lblOtp.ForeColor = Color.White;
+            lblOtp.Location = new Point(30, 249);
+            lblOtp.Name = "lblOtp";
+            lblOtp.Size = new Size(93, 41);
+            lblOtp.TabIndex = 10;
+            lblOtp.Text = "OTP: ";
+            // 
             // TransactionPanel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(57, 62, 70);
+            Controls.Add(txtOtp);
+            Controls.Add(lblOtp);
+            Controls.Add(btnOtp);
             Controls.Add(nameOutput);
             Controls.Add(btnSearch);
             Controls.Add(txtMoney);
@@ -150,5 +186,8 @@
         private TextBox txtMoney;
         private Button btnSearch;
         private Label nameOutput;
+        private Button btnOtp;
+        private TextBox txtOtp;
+        private Label lblOtp;
     }
 }
