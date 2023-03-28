@@ -6,13 +6,16 @@ create table users (
 	dob date,
 	pass nvarchar(30),
 	accBalance bigInt,
-	gender bit
+	gender bit,
+	email nvarchar(30)
 )
 
-insert into users values ('phuc', '0915692401', '05/05/2001', '123', 15000000, 1);
-select * from users where username = 'phuc' and pass = '123';
+drop table users;
 
-insert into users values ('kiet', '0918090705', '01/01/1963', '123', 15000000, 1)
+insert into users values ('phuc', '0915692401', '05/05/2001', '123', 15000000, 1, 'phanbadaiphuc123@gmail.com');
+select * from users where phone = '0915692401';
+
+insert into users values ('kiet', '0918090705', '01/01/1963', '123', 15000000, 1, '')
 select * from users where phone = '0918090705'
 
 create table history (
@@ -24,6 +27,8 @@ create table history (
 	receiver nvarchar(30),
 	amount nvarchar(30)
 )
+
+drop table history 
 
 delete from history
 
