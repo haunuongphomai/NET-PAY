@@ -15,6 +15,13 @@ namespace Project
         public String phone;
         public String dob;
         public int gender;
+        public String email;
+
+        public String getEmail
+        {
+            get { return email; }
+            set { email = value; }
+        }
 
         public int getGender { 
             get { return gender; }
