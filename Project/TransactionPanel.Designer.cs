@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             lblPhone = new Label();
             lblMoney = new Label();
             lblName = new Label();
@@ -39,6 +40,9 @@
             btnOtp = new Button();
             txtOtp = new TextBox();
             lblOtp = new Label();
+            lblOr = new Label();
+            btnQRCode = new Button();
+            timer1 = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // lblPhone
@@ -153,11 +157,38 @@
             lblOtp.TabIndex = 10;
             lblOtp.Text = "OTP: ";
             // 
+            // lblOr
+            // 
+            lblOr.AutoSize = true;
+            lblOr.Font = new Font("Bahnschrift", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            lblOr.ForeColor = Color.White;
+            lblOr.Location = new Point(635, 36);
+            lblOr.Name = "lblOr";
+            lblOr.Size = new Size(55, 41);
+            lblOr.TabIndex = 12;
+            lblOr.Text = "Or";
+            // 
+            // btnQRCode
+            // 
+            btnQRCode.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnQRCode.Location = new Point(708, 42);
+            btnQRCode.Name = "btnQRCode";
+            btnQRCode.Size = new Size(112, 34);
+            btnQRCode.TabIndex = 13;
+            btnQRCode.Text = "QR Code";
+            btnQRCode.UseVisualStyleBackColor = true;
+            btnQRCode.Click += btnQRCode_Click;
+            // 
+            // timer1
+            // 
+            // 
             // TransactionPanel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(57, 62, 70);
+            Controls.Add(btnQRCode);
+            Controls.Add(lblOr);
             Controls.Add(txtOtp);
             Controls.Add(lblOtp);
             Controls.Add(btnOtp);
@@ -189,5 +220,9 @@
         private Button btnOtp;
         private TextBox txtOtp;
         private Label lblOtp;
+        private Label lblOr;
+        private Button btnQRCode;
+        private System.Windows.Forms.Timer timer1;
+        private Button button1;
     }
 }

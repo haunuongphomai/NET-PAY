@@ -31,3 +31,15 @@ C:\Users\phanb\Desktop\Net-Pay\Project\obj\Debug\net6.0-windows\refint\Project.d
 C:\Users\phanb\Desktop\Net-Pay\Project\obj\Debug\net6.0-windows\Project.pdb
 C:\Users\phanb\Desktop\Net-Pay\Project\obj\Debug\net6.0-windows\Project.genruntimeconfig.cache
 C:\Users\phanb\Desktop\Net-Pay\Project\obj\Debug\net6.0-windows\ref\Project.dll
+C:\Users\phanb\Desktop\Net-Pay\Project\bin\Debug\net6.0-windows\Zen.Barcode.Core.dll
+C:\Users\phanb\Desktop\Net-Pay\Project\bin\Debug\net6.0-windows\AForge.dll
+C:\Users\phanb\Desktop\Net-Pay\Project\bin\Debug\net6.0-windows\AForge.Video.dll
+C:\Users\phanb\Desktop\Net-Pay\Project\bin\Debug\net6.0-windows\AForge.Video.DirectShow.dll
+C:\Users\phanb\Desktop\Net-Pay\Project\bin\Debug\net6.0-windows\Microsoft.Win32.SystemEvents.dll
+C:\Users\phanb\Desktop\Net-Pay\Project\bin\Debug\net6.0-windows\System.Drawing.Common.dll
+C:\Users\phanb\Desktop\Net-Pay\Project\bin\Debug\net6.0-windows\zxing.dll
+C:\Users\phanb\Desktop\Net-Pay\Project\bin\Debug\net6.0-windows\ZXing.Windows.Compatibility.dll
+C:\Users\phanb\Desktop\Net-Pay\Project\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\phanb\Desktop\Net-Pay\Project\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\phanb\Desktop\Net-Pay\Project\obj\Debug\net6.0-windows\Project.QRCode.resources
+C:\Users\phanb\Desktop\Net-Pay\Project\bin\Debug\net6.0-windows\QRCoder.dll

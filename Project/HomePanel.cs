@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZXing.QrCode;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Project
 {
@@ -26,7 +30,13 @@ namespace Project
         {
             InitializeComponent();
             getInfor();
-            
+            //Zen.Barcode.CodeQrBarcodeDraw qrcode = Zen.Barcode.BarcodeDrawFactory.CodeQr;
+            //imgQRCode.Image = qrcode.Draw("0915692401", 50);
+            //Debug.Print(acc.Instance.getPhone);
+            QRCoder.QRCodeGenerator QG = new QRCoder.QRCodeGenerator();
+            var MyData = QG.CreateQrCode(acc.Instance.getPhone, QRCoder.QRCodeGenerator.ECCLevel.H);
+            var code = new QRCoder.QRCode(MyData);
+            imgQRCode.Image = code.GetGraphic(50);
         }
 
         public void update(String newString)
