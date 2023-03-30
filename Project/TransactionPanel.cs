@@ -11,6 +11,11 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AForge.Video;
+using AForge.Video.DirectShow;
+using ZXing;
+using ZXing.Windows.Compatibility;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Project
 {
@@ -18,6 +23,8 @@ namespace Project
     {
         private static int receive;
         private static TransactionPanel _instance;
+
+
         public static TransactionPanel instance
         {
             get
@@ -30,6 +37,12 @@ namespace Project
         public TransactionPanel()
         {
             InitializeComponent();
+        }
+
+        public string TextBoxValue
+        {
+            get { return txtPhone.Text; }
+            set { txtPhone.Text = value; }
         }
 
         Random randos = new Random();
@@ -60,10 +73,13 @@ namespace Project
                     txtOtp.Show();
                     btnOtp.Show();
                     txtOtp.ReadOnly = true;
+                    //imgQRCode.Hide();
+                    //cboDevice.Hide();
+
                 }
                 else
                 {
-                    MessageBox.Show("No account found!", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                    MessageBox.Show("No account found!", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -82,6 +98,8 @@ namespace Project
             txtOtp.Hide();
             lblOtp.Hide();
             btnOtp.Hide();
+            //imgQRCode.Hide();
+            //cboDevice.Hide();
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
@@ -97,7 +115,8 @@ namespace Project
             else if (Convert.ToInt32(txtOtp.Text) != otp)
             {
                 MessageBox.Show("OTP code is incorrect!", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            } else
+            }
+            else
             {
 
                 int send = Convert.ToInt32(acc.Instance.getBalance) - Convert.ToInt32(txtMoney.Text);
@@ -169,5 +188,22 @@ namespace Project
 
             txtOtp.ReadOnly = false;
         }
+
+        private void btnQRCode_Click(object sender, EventArgs e)
+        {
+            QRCode h1 = new QRCode();
+            h1.Show();
+            lblName.Hide();
+            lblMoney.Hide();
+            nameOutput.Hide();
+            txtMoney.Hide();
+            btnEnter.Hide();
+            txtOtp.Hide();
+            lblOtp.Hide();
+            btnOtp.Hide();
+            txtPhone.Text = "";
+
+        }
+
     }
 }

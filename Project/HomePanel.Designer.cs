@@ -42,18 +42,18 @@ namespace Project
             balanced = new Label();
             name = new Label();
             id = new Label();
-            qrCodeimg = new PictureBox();
             qrCode = new Label();
             lblBalance = new Label();
             lblPhone = new Label();
             lblName = new Label();
             IdOutput = new Label();
             nameOutput = new Label();
+            imgQRCode = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)creditCard).BeginInit();
             creditCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)creditcardBehind).BeginInit();
             creditcardBehind.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)qrCodeimg).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)imgQRCode).BeginInit();
             SuspendLayout();
             // 
             // creditCard
@@ -201,22 +201,12 @@ namespace Project
             id.TabIndex = 27;
             id.Text = "Account ID:";
             // 
-            // qrCodeimg
-            // 
-            qrCodeimg.BackColor = Color.White;
-            qrCodeimg.Image = Properties.Resources.qrcode;
-            qrCodeimg.Location = new Point(544, 316);
-            qrCodeimg.Name = "qrCodeimg";
-            qrCodeimg.Size = new Size(230, 230);
-            qrCodeimg.TabIndex = 28;
-            qrCodeimg.TabStop = false;
-            // 
             // qrCode
             // 
             qrCode.AutoSize = true;
             qrCode.Font = new Font("Bahnschrift", 20F, FontStyle.Regular, GraphicsUnit.Point);
             qrCode.ForeColor = Color.White;
-            qrCode.Location = new Point(569, 566);
+            qrCode.Location = new Point(563, 571);
             qrCode.Name = "qrCode";
             qrCode.Size = new Size(225, 41);
             qrCode.TabIndex = 29;
@@ -231,7 +221,6 @@ namespace Project
             lblBalance.Name = "lblBalance";
             lblBalance.Size = new Size(0, 38);
             lblBalance.TabIndex = 30;
-            lblBalance.Text = acc.Instance.getBalance;
             // 
             // lblPhone
             // 
@@ -242,7 +231,6 @@ namespace Project
             lblPhone.Name = "lblPhone";
             lblPhone.Size = new Size(0, 38);
             lblPhone.TabIndex = 31;
-            lblPhone.Text = acc.Instance.getPhone;
             // 
             // lblName
             // 
@@ -253,7 +241,6 @@ namespace Project
             lblName.Name = "lblName";
             lblName.Size = new Size(0, 38);
             lblName.TabIndex = 32;
-            lblName.Text = acc.Instance.getUsername;
             // 
             // IdOutput
             // 
@@ -265,7 +252,6 @@ namespace Project
             IdOutput.Name = "IdOutput";
             IdOutput.Size = new Size(0, 24);
             IdOutput.TabIndex = 33;
-            IdOutput.Text = acc.Instance.getPhone;
             // 
             // nameOutput
             // 
@@ -277,13 +263,22 @@ namespace Project
             nameOutput.Name = "nameOutput";
             nameOutput.Size = new Size(0, 24);
             nameOutput.TabIndex = 34;
-            nameOutput.Text = acc.Instance.getUsername;
+            // 
+            // imgQRCode
+            // 
+            imgQRCode.Location = new Point(544, 315);
+            imgQRCode.Name = "imgQRCode";
+            imgQRCode.Size = new Size(269, 236);
+            imgQRCode.SizeMode = PictureBoxSizeMode.Zoom;
+            imgQRCode.TabIndex = 35;
+            imgQRCode.TabStop = false;
             // 
             // HomePanel
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(57, 62, 70);
+            Controls.Add(imgQRCode);
             Controls.Add(nameOutput);
             Controls.Add(IdOutput);
             Controls.Add(lblName);
@@ -294,7 +289,6 @@ namespace Project
             Controls.Add(balanced);
             Controls.Add(name);
             Controls.Add(id);
-            Controls.Add(qrCodeimg);
             Controls.Add(qrCode);
             Name = "HomePanel";
             Size = new Size(984, 642);
@@ -304,7 +298,7 @@ namespace Project
             ((System.ComponentModel.ISupportInitialize)creditcardBehind).EndInit();
             creditcardBehind.ResumeLayout(false);
             creditcardBehind.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)qrCodeimg).EndInit();
+            ((System.ComponentModel.ISupportInitialize)imgQRCode).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -323,12 +317,12 @@ namespace Project
         private Label balanced;
         private Label name;
         private Label id;
-        private PictureBox qrCodeimg;
         private Label qrCode;
         public Label lblBalance;
         private Label lblPhone;
         private Label lblName;
         private Label IdOutput;
         private Label nameOutput;
+        private PictureBox imgQRCode;
     }
 }
