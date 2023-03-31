@@ -7,7 +7,13 @@
     <Compile Update="History.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="HomeAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="HomePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="HomePanelAdmin.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Login.cs">
@@ -23,6 +29,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="TransactionPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserList.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
