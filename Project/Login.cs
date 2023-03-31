@@ -49,10 +49,19 @@ namespace Project
 
                 if (res > 0)
                 {
-                    getInfor(username, password);
-                    Home h = new Home();
-                    h.Show();
-                    this.Hide();
+                    if (!username[0].Equals('#'))
+                    {
+                        getInfor(username, password);
+                        Home h = new Home();
+                        h.Show();
+                        this.Hide();
+                    } else
+                    {
+                        getInfor(username, password);
+                        HomeAdmin h1 = new HomeAdmin();
+                        h1.Show();
+                        this.Hide();
+                    }
                 }
                 else
                 {

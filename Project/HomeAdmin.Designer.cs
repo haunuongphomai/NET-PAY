@@ -1,6 +1,6 @@
 ﻿namespace Project
 {
-    partial class Home
+    partial class HomeAdmin
     {
         /// <summary>
         /// Required designer variable.
@@ -31,14 +31,8 @@
             components = new System.ComponentModel.Container();
             actionBar = new Panel();
             btnPanel = new Panel();
-            panel1 = new Panel();
-            modifAcc = new Button();
-            button2 = new Button();
-            btnLogOut = new Button();
-            btnTransaction = new Button();
-            btnHistory = new Button();
             btnExit = new Button();
-            btnHome = new Button();
+            btnUsers = new Button();
             logo = new PictureBox();
             header = new Panel();
             button1 = new Button();
@@ -46,9 +40,9 @@
             search = new TextBox();
             voidPanel = new Panel();
             timer1 = new System.Windows.Forms.Timer(components);
+            accSetting = new Button();
             actionBar.SuspendLayout();
             btnPanel.SuspendLayout();
-            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logo).BeginInit();
             header.SuspendLayout();
             SuspendLayout();
@@ -66,79 +60,13 @@
             // btnPanel
             // 
             btnPanel.BackColor = Color.FromArgb(203, 228, 222);
-            btnPanel.Controls.Add(panel1);
-            btnPanel.Controls.Add(btnTransaction);
-            btnPanel.Controls.Add(btnHistory);
+            btnPanel.Controls.Add(accSetting);
             btnPanel.Controls.Add(btnExit);
-            btnPanel.Controls.Add(btnHome);
+            btnPanel.Controls.Add(btnUsers);
             btnPanel.Location = new Point(0, 198);
             btnPanel.Name = "btnPanel";
             btnPanel.Size = new Size(272, 502);
             btnPanel.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(modifAcc);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(btnLogOut);
-            panel1.Location = new Point(58, 156);
-            panel1.MaximumSize = new Size(140, 156);
-            panel1.MinimumSize = new Size(140, 57);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(140, 57);
-            panel1.TabIndex = 0;
-            // 
-            // modifAcc
-            // 
-            modifAcc.Dock = DockStyle.Top;
-            modifAcc.Location = new Point(0, 56);
-            modifAcc.Name = "modifAcc";
-            modifAcc.Size = new Size(140, 51);
-            modifAcc.TabIndex = 5;
-            modifAcc.Text = "Account Settings";
-            modifAcc.UseVisualStyleBackColor = true;
-            modifAcc.Click += modifAcc_Click;
-            // 
-            // button2
-            // 
-            button2.Dock = DockStyle.Top;
-            button2.Location = new Point(0, 0);
-            button2.Name = "button2";
-            button2.Size = new Size(140, 56);
-            button2.TabIndex = 9;
-            button2.Text = "Account";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
-            // btnLogOut
-            // 
-            btnLogOut.Location = new Point(0, 103);
-            btnLogOut.Name = "btnLogOut";
-            btnLogOut.Size = new Size(137, 51);
-            btnLogOut.TabIndex = 6;
-            btnLogOut.Text = "Logout";
-            btnLogOut.UseVisualStyleBackColor = true;
-            btnLogOut.Click += btnLogOut_Click;
-            // 
-            // btnTransaction
-            // 
-            btnTransaction.Location = new Point(83, 76);
-            btnTransaction.Name = "btnTransaction";
-            btnTransaction.Size = new Size(94, 29);
-            btnTransaction.TabIndex = 3;
-            btnTransaction.Text = "Transaction";
-            btnTransaction.UseVisualStyleBackColor = true;
-            btnTransaction.Click += btnTransaction_Click;
-            // 
-            // btnHistory
-            // 
-            btnHistory.Location = new Point(83, 121);
-            btnHistory.Name = "btnHistory";
-            btnHistory.Size = new Size(94, 29);
-            btnHistory.TabIndex = 2;
-            btnHistory.Text = "History";
-            btnHistory.UseVisualStyleBackColor = true;
-            btnHistory.Click += btnTest_Click;
             // 
             // btnExit
             // 
@@ -150,15 +78,15 @@
             btnExit.UseVisualStyleBackColor = true;
             btnExit.Click += btnExit_Click;
             // 
-            // btnHome
+            // btnUsers
             // 
-            btnHome.Location = new Point(83, 32);
-            btnHome.Name = "btnHome";
-            btnHome.Size = new Size(94, 29);
-            btnHome.TabIndex = 0;
-            btnHome.Text = "Home";
-            btnHome.UseVisualStyleBackColor = true;
-            btnHome.Click += btnHome_Click;
+            btnUsers.Location = new Point(83, 32);
+            btnUsers.Name = "btnUsers";
+            btnUsers.Size = new Size(94, 29);
+            btnUsers.TabIndex = 0;
+            btnUsers.Text = "Users";
+            btnUsers.UseVisualStyleBackColor = true;
+            btnUsers.Click += btnUsers_Click;
             // 
             // logo
             // 
@@ -204,7 +132,7 @@
             lblGreeting.Name = "lblGreeting";
             lblGreeting.Size = new Size(364, 33);
             lblGreeting.TabIndex = 0;
-            
+            lblGreeting.Text = "Hi , Welcome to NET PAYPAL!";
             // 
             // search
             // 
@@ -214,8 +142,6 @@
             search.Name = "search";
             search.Size = new Size(350, 34);
             search.TabIndex = 2;
-            search.Enter += search_Enter;
-            search.Leave += search_Leave;
             // 
             // voidPanel
             // 
@@ -228,9 +154,18 @@
             // timer1
             // 
             timer1.Interval = 15;
-            timer1.Tick += timer1_Tick;
             // 
-            // Home
+            // accSetting
+            // 
+            accSetting.Location = new Point(67, 92);
+            accSetting.Name = "accSetting";
+            accSetting.Size = new Size(126, 29);
+            accSetting.TabIndex = 2;
+            accSetting.Text = "Account Setting";
+            accSetting.UseVisualStyleBackColor = true;
+            accSetting.Click += accSetting_Click;
+            // 
+            // HomeAdmin
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
@@ -240,14 +175,13 @@
             Controls.Add(actionBar);
             Controls.Add(header);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Home";
+            Name = "HomeAdmin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Home";
-            Load += Home_Load;
+            Load += HomeAdmin_Load;
             actionBar.ResumeLayout(false);
             actionBar.PerformLayout();
             btnPanel.ResumeLayout(false);
-            panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)logo).EndInit();
             header.ResumeLayout(false);
             header.PerformLayout();
@@ -262,16 +196,16 @@
         private TextBox search;
 
         #endregion
-        private Button btnHome;
-        private Button btnHistory;
+        private Button btnUsers;
         private Button btnExit;
         private Panel voidPanel;
-        private Button btnTransaction;
         private System.Windows.Forms.Timer timer1;
         private Button button1;
-        private Panel panel1;
-        private Button modifAcc;
-        private Button button2;
-        private Button btnLogOut;
+
+        #region Windows Form Designer generated code
+
+        #endregion
+
+        private Button accSetting;
     }
 }

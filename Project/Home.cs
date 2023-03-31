@@ -45,6 +45,7 @@ namespace Project
             HomePanel home = new HomePanel();
             home.Dock = DockStyle.Fill;
             Container.Controls.Add(home);
+            lblGreeting.Text = "Hi " + acc.Instance.getUsername + ", Welcome to NET PAYPAL!";
 
             if (search.Text.Length == 0)
             {
@@ -162,6 +163,11 @@ namespace Project
             {
                 AccountSetting.instance.BringToFront();
             }
+        }
+
+        private void btnNotif_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

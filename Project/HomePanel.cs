@@ -30,9 +30,6 @@ namespace Project
         {
             InitializeComponent();
             getInfor();
-            //Zen.Barcode.CodeQrBarcodeDraw qrcode = Zen.Barcode.BarcodeDrawFactory.CodeQr;
-            //imgQRCode.Image = qrcode.Draw("0915692401", 50);
-            //Debug.Print(acc.Instance.getPhone);
             QRCoder.QRCodeGenerator QG = new QRCoder.QRCodeGenerator();
             var MyData = QG.CreateQrCode(acc.Instance.getPhone, QRCoder.QRCodeGenerator.ECCLevel.H);
             var code = new QRCoder.QRCode(MyData);
@@ -47,6 +44,8 @@ namespace Project
         public void getInfor()
         {
             lblBalance.Text = string.Format("{0:n}", double.Parse(acc.Instance.getBalance));
+            lblName.Text = acc.Instance.getUsername;
+            lblPhone.Text = acc.Instance.getPhone;
         }
     }
 }

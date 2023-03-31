@@ -43,3 +43,6 @@ C:\Users\phanb\Desktop\Net-Pay\Project\bin\Debug\net6.0-windows\runtimes\win\lib
 C:\Users\phanb\Desktop\Net-Pay\Project\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\phanb\Desktop\Net-Pay\Project\obj\Debug\net6.0-windows\Project.QRCode.resources
 C:\Users\phanb\Desktop\Net-Pay\Project\bin\Debug\net6.0-windows\QRCoder.dll
+C:\Users\phanb\Desktop\Net-Pay\Project\obj\Debug\net6.0-windows\Project.HomeAdmin.resources
+C:\Users\phanb\Desktop\Net-Pay\Project\obj\Debug\net6.0-windows\Project.UserList.resources
+C:\Users\phanb\Desktop\Net-Pay\Project\obj\Debug\net6.0-windows\Project.HomePanelAdmin.resources
