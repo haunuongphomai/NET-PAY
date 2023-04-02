@@ -30,6 +30,7 @@
         {
             userTable = new DataGridView();
             btnDelete = new Button();
+            txtSearch = new TextBox();
             ((System.ComponentModel.ISupportInitialize)userTable).BeginInit();
             SuspendLayout();
             // 
@@ -56,22 +57,38 @@
             btnDelete.UseVisualStyleBackColor = true;
             btnDelete.Click += btnDelete_Click;
             // 
+            // txtSearch
+            // 
+            txtSearch.Font = new Font("Bahnschrift", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            txtSearch.ForeColor = Color.Black;
+            txtSearch.Location = new Point(21, 53);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(350, 34);
+            txtSearch.TabIndex = 7;
+            txtSearch.TextChanged += search_TextChanged;
+            txtSearch.Enter += txtSearch_Enter;
+            txtSearch.Leave += txtSearch_Leave;
+            // 
             // UserList
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(57, 62, 70);
+            Controls.Add(txtSearch);
             Controls.Add(btnDelete);
             Controls.Add(userTable);
             Name = "UserList";
             Size = new Size(984, 642);
+            Load += UserList_Load;
             ((System.ComponentModel.ISupportInitialize)userTable).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private DataGridView userTable;
         private Button btnDelete;
+        private TextBox txtSearch;
     }
 }

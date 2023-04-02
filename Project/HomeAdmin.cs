@@ -68,5 +68,19 @@ namespace Project
                 AccountSetting.instance.BringToFront();
             }
         }
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+            if (!voidPanel.Controls.Contains(History.instance))
+            {
+                voidPanel.Controls.Add(History.instance);
+                History.instance.Dock = DockStyle.Fill;
+                History.instance.BringToFront();
+            }
+            else
+            {
+                History.instance.BringToFront();
+            }
+        }
     }
 }

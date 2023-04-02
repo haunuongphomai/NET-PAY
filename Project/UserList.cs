@@ -35,7 +35,7 @@ namespace Project
             {
                 String id = acc.Instance.getUsername;
                 clsDatabase.OpenConnection();
-                SqlDataAdapter query = new SqlDataAdapter("select * from users where username not like '#%'", clsDatabase.con);
+                SqlDataAdapter query = new SqlDataAdapter("select * from users where accType not like 1", clsDatabase.con);
 
                 DataTable dtb = new DataTable();
                 query.Fill(dtb);
@@ -71,7 +71,9 @@ namespace Project
                     "pass = @pass, " +
                     "accBalance = @accBalance, " +
                     "gender = @gender, " +
-                    "email = @email where phone = @phone", clsDatabase.con);
+                    "email = @email, " +
+                    "active = @active, " +
+                    "accType = @accType where phone = @phone", clsDatabase.con);
 
                 query.Parameters.AddWithValue("username", dgvRow.Cells["username"].Value);
                 query.Parameters.AddWithValue("dob", dgvRow.Cells["dob"].Value);
@@ -79,6 +81,8 @@ namespace Project
                 query.Parameters.AddWithValue("accBalance", dgvRow.Cells["accBalance"].Value);
                 query.Parameters.AddWithValue("gender", dgvRow.Cells["gender"].Value);
                 query.Parameters.AddWithValue("email", dgvRow.Cells["email"].Value);
+                query.Parameters.AddWithValue("accType", dgvRow.Cells["accType"].Value);
+                query.Parameters.AddWithValue("active", dgvRow.Cells["active"].Value);
                 query.Parameters.AddWithValue("phone", dgvRow.Cells["phone"].Value);
 
                 query.ExecuteNonQuery();
@@ -89,12 +93,67 @@ namespace Project
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            try
+            {
+                clsDatabase.OpenConnection();
+                SqlCommand query = new SqlCommand("delete from users where phone = @phone", clsDatabase.con);
+                query.Parameters.AddWithValue("phone", userTable.CurrentRow.Cells["phone"].Value);
+                query.ExecuteNonQuery();
+                clsDatabase.CloseConnection();
+                load_Data1();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void search_TextChanged(object sender, EventArgs e)
+        {
+            String s1 = txtSearch.Text;
+
             clsDatabase.OpenConnection();
-            SqlCommand query = new SqlCommand("delete from users where phone = @phone", clsDatabase.con);
-            query.Parameters.AddWithValue("phone", userTable.CurrentRow.Cells["phone"].Value);
-            query.ExecuteNonQuery();
+            SqlDataAdapter query = new SqlDataAdapter("select * from users where phone = @phone", clsDatabase.con);
+            query.SelectCommand.Parameters.AddWithValue("phone", s1);
+            DataTable dtb = new DataTable();
+            query.Fill(dtb);
+
+            if (dtb.Rows.Count > 0)
+            {
+                userTable.DataSource = dtb;
+            }
+            else
+            {
+                load_Data1();
+            }
             clsDatabase.CloseConnection();
-            load_Data1();
+        }
+
+        private void txtSearch_Leave(object sender, EventArgs e)
+        {
+            if (txtSearch.Text.Length == 0)
+            {
+                txtSearch.Text = "Search";
+                txtSearch.ForeColor = Color.Silver;
+            }
+        }
+
+        private void txtSearch_Enter(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "Search")
+            {
+                txtSearch.Text = "";
+                txtSearch.ForeColor = Color.Black;
+            }
+        }
+
+        private void UserList_Load(object sender, EventArgs e)
+        {
+            if (txtSearch.Text.Length == 0)
+            {
+                txtSearch.Text = "Search";
+                txtSearch.ForeColor = Color.Silver;
+            }
         }
     }
 }

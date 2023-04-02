@@ -1,5 +1,6 @@
 ﻿using System.Data.SqlClient;
 using System.Diagnostics;
+using ZXing;
 
 namespace Project
 {
@@ -27,6 +28,7 @@ namespace Project
             acc.Instance.getDOB = Convert.ToString(reader["dob"]);
             acc.Instance.getGender = Convert.ToInt32(reader["gender"]);
             acc.Instance.getEmail = Convert.ToString(reader["email"]);
+            acc.Instance.getType = Convert.ToString(reader["accType"]);
 
         }
 
@@ -38,35 +40,44 @@ namespace Project
                 String username = usernameInput.Text.ToString();
                 String password = passwordInput.Text.ToString();
 
-                SqlCommand query = new SqlCommand("select count(*) from users where username = @username and pass = @pass", clsDatabase.con);
+                SqlCommand query = new SqlCommand("select * from users where username = @username and pass = @pass", clsDatabase.con);
                 query.Parameters.AddWithValue("username", username);
                 query.Parameters.AddWithValue("pass", password);
 
-                object x = query.ExecuteScalar();
-                int res = Convert.ToInt32(x);
+                var x = query.ExecuteReader();
+                x.Read();
 
-                clsDatabase.CloseConnection();
-
-                if (res > 0)
+                if (x.HasRows)
                 {
-                    if (!username[0].Equals('#'))
+                    Debug.Print(Convert.ToString(x["active"]));
+                    if (Convert.ToString(x["active"]).Equals("1"))
                     {
-                        getInfor(username, password);
-                        Home h = new Home();
-                        h.Show();
-                        this.Hide();
+                        String accType = Convert.ToString(x["accType"]);
+                        if (accType.Equals("0"))
+                        {
+                            getInfor(username, password);
+                            Home h = new Home();
+                            h.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            getInfor(username, password);
+                            HomeAdmin h1 = new HomeAdmin();
+                            h1.Show();
+                            this.Hide();
+                        }
                     } else
                     {
-                        getInfor(username, password);
-                        HomeAdmin h1 = new HomeAdmin();
-                        h1.Show();
-                        this.Hide();
+                        MessageBox.Show("Your account has been blocked!", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 else
                 {
                     MessageBox.Show("Invalid username or password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+                clsDatabase.CloseConnection();
             }
             catch (Exception) { }
         }

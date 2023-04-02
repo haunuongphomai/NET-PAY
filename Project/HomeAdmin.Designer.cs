@@ -31,16 +31,16 @@
             components = new System.ComponentModel.Container();
             actionBar = new Panel();
             btnPanel = new Panel();
+            btnHistory = new Button();
+            accSetting = new Button();
             btnExit = new Button();
             btnUsers = new Button();
             logo = new PictureBox();
             header = new Panel();
             button1 = new Button();
             lblGreeting = new Label();
-            search = new TextBox();
             voidPanel = new Panel();
             timer1 = new System.Windows.Forms.Timer(components);
-            accSetting = new Button();
             actionBar.SuspendLayout();
             btnPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logo).BeginInit();
@@ -60,6 +60,7 @@
             // btnPanel
             // 
             btnPanel.BackColor = Color.FromArgb(203, 228, 222);
+            btnPanel.Controls.Add(btnHistory);
             btnPanel.Controls.Add(accSetting);
             btnPanel.Controls.Add(btnExit);
             btnPanel.Controls.Add(btnUsers);
@@ -67,6 +68,26 @@
             btnPanel.Name = "btnPanel";
             btnPanel.Size = new Size(272, 502);
             btnPanel.TabIndex = 0;
+            // 
+            // btnHistory
+            // 
+            btnHistory.Location = new Point(83, 157);
+            btnHistory.Name = "btnHistory";
+            btnHistory.Size = new Size(94, 29);
+            btnHistory.TabIndex = 3;
+            btnHistory.Text = "History";
+            btnHistory.UseVisualStyleBackColor = true;
+            btnHistory.Click += btnHistory_Click;
+            // 
+            // accSetting
+            // 
+            accSetting.Location = new Point(67, 92);
+            accSetting.Name = "accSetting";
+            accSetting.Size = new Size(126, 29);
+            accSetting.TabIndex = 2;
+            accSetting.Text = "Account Setting";
+            accSetting.UseVisualStyleBackColor = true;
+            accSetting.Click += accSetting_Click;
             // 
             // btnExit
             // 
@@ -104,7 +125,6 @@
             header.BackColor = Color.FromArgb(34, 40, 49);
             header.Controls.Add(button1);
             header.Controls.Add(lblGreeting);
-            header.Controls.Add(search);
             header.Location = new Point(272, 0);
             header.Name = "header";
             header.Size = new Size(984, 58);
@@ -134,15 +154,6 @@
             lblGreeting.TabIndex = 0;
             lblGreeting.Text = "Hi , Welcome to NET PAYPAL!";
             // 
-            // search
-            // 
-            search.Font = new Font("Bahnschrift", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            search.ForeColor = Color.FromArgb(153, 153, 153);
-            search.Location = new Point(605, 15);
-            search.Name = "search";
-            search.Size = new Size(350, 34);
-            search.TabIndex = 2;
-            // 
             // voidPanel
             // 
             voidPanel.ImeMode = ImeMode.Katakana;
@@ -154,16 +165,6 @@
             // timer1
             // 
             timer1.Interval = 15;
-            // 
-            // accSetting
-            // 
-            accSetting.Location = new Point(67, 92);
-            accSetting.Name = "accSetting";
-            accSetting.Size = new Size(126, 29);
-            accSetting.TabIndex = 2;
-            accSetting.Text = "Account Setting";
-            accSetting.UseVisualStyleBackColor = true;
-            accSetting.Click += accSetting_Click;
             // 
             // HomeAdmin
             // 
@@ -193,7 +194,6 @@
         private Panel header;
         private PictureBox logo;
         private Label lblGreeting;
-        private TextBox search;
 
         #endregion
         private Button btnUsers;
@@ -207,5 +207,6 @@
         #endregion
 
         private Button accSetting;
+        private Button btnHistory;
     }
 }

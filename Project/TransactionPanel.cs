@@ -65,14 +65,22 @@ namespace Project
                     receive = Convert.ToInt32(reader["accBalance"]);
 
                     lblName.Show();
-                    lblMoney.Show();
                     nameOutput.Show();
-                    txtMoney.Show();
-                    btnEnter.Show();
-                    lblOtp.Show();
-                    txtOtp.Show();
-                    btnOtp.Show();
-                    txtOtp.ReadOnly = true;
+
+                    if (Convert.ToString(reader["active"]).Equals("1"))
+                    {
+                        lblMoney.Show();
+                        txtMoney.Show();
+                        btnEnter.Show();
+                        lblOtp.Show();
+                        txtOtp.Show();
+                        btnOtp.Show();
+                        txtOtp.ReadOnly = true;
+                    }
+                    else
+                    {
+                        lblWarning.Show();
+                    }
                     //imgQRCode.Hide();
                     //cboDevice.Hide();
 
@@ -98,8 +106,7 @@ namespace Project
             txtOtp.Hide();
             lblOtp.Hide();
             btnOtp.Hide();
-            //imgQRCode.Hide();
-            //cboDevice.Hide();
+            lblWarning.Hide();
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
@@ -147,7 +154,7 @@ namespace Project
                 query3.ExecuteNonQuery();
 
                 MessageBox.Show("Successfully transfered money!", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                HomePanel.instance.BalanceValue = acc.Instance.getBalance;
                 clsDatabase.CloseConnection();
                 receive = 0;
 
@@ -201,6 +208,7 @@ namespace Project
             txtOtp.Hide();
             lblOtp.Hide();
             btnOtp.Hide();
+            lblWarning.Hide();
             txtPhone.Text = "";
 
         }
