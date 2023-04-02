@@ -1,6 +1,8 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.Net.Mail;
+using System.Net;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -9,6 +11,8 @@ namespace Project
 {
     public partial class Register : Form
     {
+        int otp;
+        Random randos = new Random();
         public Register()
         {
             InitializeComponent();
@@ -77,31 +81,20 @@ namespace Project
                 }
                 else
                 {
+                    getOtp();
+                    string value = "";
 
-                    clsDatabase.OpenConnection();
-                    SqlCommand query = new SqlCommand("insert into users values (@name, @phone, @dob, @pass, 1000000, @gender, @email)", clsDatabase.con);
-                    query.Parameters.AddWithValue("name", name);
-                    query.Parameters.AddWithValue("pass", pass);
-                    query.Parameters.AddWithValue("phone", phone);
-                    query.Parameters.Add("@dob", SqlDbType.Date).Value = dobInput.Value.Date;
-                    query.Parameters.AddWithValue("gender", gender);
-                    query.Parameters.AddWithValue("email", email);
+                    if (InputBox("Dialog Box", "Verify your email?", ref value) == DialogResult.OK)
+                    {
+                        if (value.ToString().Equals(otp.ToString()))
+                        {
+                            MessageBox.Show("Success");
+                        } else
+                        {
+                            MessageBox.Show("Incorrect OTP code");
+                        }
+                    }
 
-                    acc.Instance.getUsername = usernameInput.Text;
-                    acc.Instance.getBalance = "1000000";
-                    acc.Instance.getPhone = numberPhoneInput.Text;
-                    acc.Instance.getPassword = passwordInput.Text;
-                    acc.Instance.getDOB = dobInput.Text;
-                    acc.Instance.getGender = gender;
-                    acc.Instance.getEmail = emailInput.Text;
-
-                    query.ExecuteNonQuery();
-
-                    clsDatabase.CloseConnection();
-
-                    Home h = new Home();
-                    h.Show();
-                    this.Hide();
                 }
 
             }
@@ -109,6 +102,36 @@ namespace Project
             {
                 MessageBox.Show(error.ToString());
             }
+        }
+
+        public void getOtp()
+        {
+            otp = randos.Next(100000, 1000000);
+            var fromAddress = new MailAddress("netpaycompanyvn@gmail.com");
+            var toAddress = new MailAddress(emailInput.Text);
+            const string frompass = "hfgzikchagrvpmkm";
+            const string subject = "OTP code";
+            string body = otp.ToString();
+
+            var smtp = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromAddress.Address, frompass),
+                Timeout = 200000,
+                EnableSsl = true,
+            };
+
+            using (var message = new MailMessage(fromAddress, toAddress)
+            {
+                Subject = subject,
+                Body = body
+            })
+            {
+                smtp.Send(message);
+            };
         }
 
         public bool isPhone(String phone)
@@ -152,7 +175,47 @@ namespace Project
             }
             return true;
 
+        }
 
+        public static DialogResult InputBox(string title, string promptText, ref string value)
+        {
+            Form form = new Form();
+            Label label = new Label();
+            TextBox textBox = new TextBox();
+            Button buttonOk = new Button();
+            Button buttonCancel = new Button();
+
+            form.Text = title;
+            label.Text = promptText;
+
+            form.Text = title;
+            label.Text = promptText;
+
+            buttonOk.Text = "OK";
+            buttonCancel.Text = "Cancel";
+            buttonOk.DialogResult = DialogResult.OK;
+            buttonCancel.DialogResult = DialogResult.Cancel;
+
+            label.SetBounds(36, 36, 372, 13);
+            textBox.SetBounds(36, 86, 700, 20);
+            buttonOk.SetBounds(228, 160, 160, 60);
+            buttonCancel.SetBounds(400, 160, 160, 60);
+
+            label.AutoSize = true;
+            form.ClientSize = new Size(796, 307);
+            form.FormBorderStyle = FormBorderStyle.FixedDialog;
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.MinimizeBox = false;
+            form.MaximizeBox = false;
+
+            form.Controls.AddRange(new Control[] { label, textBox, buttonOk, buttonCancel });
+            form.AcceptButton = buttonOk;
+            form.CancelButton = buttonCancel;
+
+            DialogResult dialogResult = form.ShowDialog();
+
+            value = textBox.Text;
+            return dialogResult;
         }
     }
 }

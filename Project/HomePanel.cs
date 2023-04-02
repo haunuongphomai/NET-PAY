@@ -36,6 +36,12 @@ namespace Project
             imgQRCode.Image = code.GetGraphic(50);
         }
 
+        public string BalanceValue
+        {
+            get { return lblBalance.Text; }
+            set { lblBalance.Text = value; }
+        }
+
         public void update(String newString)
         {
             lblBalance.Text = newString;

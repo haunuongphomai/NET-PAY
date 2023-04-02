@@ -43,6 +43,7 @@
             lblOr = new Label();
             btnQRCode = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
+            lblWarning = new Label();
             SuspendLayout();
             // 
             // lblPhone
@@ -179,14 +180,23 @@
             btnQRCode.UseVisualStyleBackColor = true;
             btnQRCode.Click += btnQRCode_Click;
             // 
-            // timer1
+            // lblWarning
             // 
+            lblWarning.AutoSize = true;
+            lblWarning.Font = new Font("Bahnschrift", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            lblWarning.ForeColor = Color.Red;
+            lblWarning.Location = new Point(249, 472);
+            lblWarning.Name = "lblWarning";
+            lblWarning.Size = new Size(483, 41);
+            lblWarning.TabIndex = 14;
+            lblWarning.Text = "This account has been banned!";
             // 
             // TransactionPanel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(57, 62, 70);
+            Controls.Add(lblWarning);
             Controls.Add(btnQRCode);
             Controls.Add(lblOr);
             Controls.Add(txtOtp);
@@ -224,5 +234,6 @@
         private Button btnQRCode;
         private System.Windows.Forms.Timer timer1;
         private Button button1;
+        private Label lblWarning;
     }
 }

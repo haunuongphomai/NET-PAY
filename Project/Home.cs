@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -77,6 +78,8 @@ namespace Project
         {
             myHomePanel.update(acc.Instance.getBalance);
             Container.Controls["HomePanel"].BringToFront();
+            HomePanel.instance.BalanceValue = acc.Instance.getBalance;
+            Debug.Print(acc.Instance.getBalance);
         }
 
         private void search_Leave(object sender, EventArgs e)

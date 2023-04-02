@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Markup;
 
 namespace Project
 {
@@ -16,6 +17,13 @@ namespace Project
         public String dob;
         public int gender;
         public String email;
+        public String type;
+
+        public String getType
+        {
+            get { return type; }
+            set { type = value; }
+        }
 
         public String getEmail
         {
