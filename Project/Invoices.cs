@@ -7,11 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Printing;
 
 namespace Project
 {
     public partial class Invoices : Form
     {
+
+        private static Invoices _instance;
+
+
+        public static Invoices instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new Invoices();
+                return _instance;
+            }
+        }
         public Invoices()
         {
             InitializeComponent();
@@ -56,6 +70,45 @@ namespace Project
         {
             get { return RNameOutput.Text; }
             set { RNameOutput.Text = value; }
+        }
+
+        private void Print(Panel pnl)
+        {
+            PrinterSettings ps = new PrinterSettings();
+            panelPrint = pnl;
+            getprintarea(pnl);
+            printPreviewDialog1.Document = printDocument1;
+            printDocument1.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
+            printPreviewDialog1.ShowDialog();
+        }
+
+        private Bitmap memoryimg;
+
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            Rectangle pagearea = e.PageBounds;
+            e.Graphics.DrawImage(memoryimg, (pagearea.Width / 2) - (this.panelPrint.Width / 2), this.panelPrint.Location.Y);
+        }
+
+        private void pDFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Print(this.panelPrint);
+        }
+
+        private void printDocument_PrintPage(object sender, PrintPageEventArgs e)
+        {
+
+        }
+
+        private void getprintarea(Panel pnl)
+        {
+            memoryimg = new Bitmap(pnl.Width, pnl.Height);
+            pnl.DrawToBitmap(memoryimg, new Rectangle(0, 0, pnl.Width, pnl.Height));
+        }
+
+        private void sendEmailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

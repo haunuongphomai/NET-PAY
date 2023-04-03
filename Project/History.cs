@@ -148,9 +148,57 @@ namespace Project
             }
         }
 
+        
+        String email;
+        String RPhone;
+
         private void btnInvoice_Click(object sender, EventArgs e)
         {
+            Invoices h1 = new Invoices();
+            h1.SPhoneOutputValue = phone;
+            h1.SNameOutputValue = username;
+            h1.SDateOutputValue = date;
+            h1.RNameOutputValue = receiver;
+            h1.SMoneyOutputValue = amount;
+            h1.RPhoneOutputValue = phone2;
+            h1.SMailOutputValue = mail;
+            h1.Show();
+        }
 
+        String username;
+        String password;
+        String phone;
+        String phone2;
+        String receiver;
+        String amount;
+        String date;
+        String mail;
+
+        public void getInfor(String s1)
+        {
+            clsDatabase.OpenConnection();
+            SqlCommand query = new SqlCommand("select email from users where phone = @phone", clsDatabase.con);
+            query.Parameters.AddWithValue("phone", s1);
+            object res = query.ExecuteScalar();
+            email = res.ToString();
+
+            clsDatabase.CloseConnection();
+        }
+
+        private void historyTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (historyTable.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                getInfor(historyTable.Rows[e.RowIndex].Cells["phone"].FormattedValue.ToString());
+                historyTable.CurrentCell.Selected = true;
+                phone = historyTable.Rows[e.RowIndex].Cells["phone"].FormattedValue.ToString();
+                username = historyTable.Rows[e.RowIndex].Cells["sender"].FormattedValue.ToString();
+                date = historyTable.Rows[e.RowIndex].Cells["currDate"].FormattedValue.ToString();
+                receiver = historyTable.Rows[e.RowIndex].Cells["receiver"].FormattedValue.ToString();
+                amount = historyTable.Rows[e.RowIndex].Cells["amount"].FormattedValue.ToString();
+                phone2 = historyTable.Rows[e.RowIndex].Cells["phone2"].FormattedValue.ToString();
+                mail = email;
+            } 
         }
     }
 }
