@@ -56,6 +56,7 @@
             historyTable.RowTemplate.Height = 29;
             historyTable.Size = new Size(940, 188);
             historyTable.TabIndex = 1;
+            historyTable.CellClick += historyTable_CellClick;
             // 
             // btnExport
             // 

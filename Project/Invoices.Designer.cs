@@ -28,33 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Invoices));
             menuStrip1 = new MenuStrip();
             pDFToolStripMenuItem = new ToolStripMenuItem();
             sendEmailToolStripMenuItem = new ToolStripMenuItem();
             lblIntro = new Label();
-            panel1 = new Panel();
+            panelPrint = new Panel();
+            pictureBox1 = new PictureBox();
+            groupBox2 = new GroupBox();
+            RPhoneOutput = new Label();
+            label6 = new Label();
+            RNameOutput = new Label();
+            label7 = new Label();
             groupBox1 = new GroupBox();
+            dateOutput = new Label();
+            moneyOutput = new Label();
+            SMailOutput = new Label();
+            SPhoneOutput = new Label();
+            SNameOutput = new Label();
+            label8 = new Label();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             lblName = new Label();
-            groupBox2 = new GroupBox();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            SNameOutput = new Label();
-            SPhoneOutput = new Label();
-            SMailOutput = new Label();
-            moneyOutput = new Label();
-            dateOutput = new Label();
-            RPhoneOutput = new Label();
-            RNameOutput = new Label();
-            pictureBox1 = new PictureBox();
+            printDocument1 = new System.Drawing.Printing.PrintDocument();
+            printPreviewDialog1 = new PrintPreviewDialog();
             menuStrip1.SuspendLayout();
-            panel1.SuspendLayout();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
+            panelPrint.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            groupBox2.SuspendLayout();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -72,33 +75,96 @@
             pDFToolStripMenuItem.Name = "pDFToolStripMenuItem";
             pDFToolStripMenuItem.Size = new Size(49, 24);
             pDFToolStripMenuItem.Text = "PDF";
+            pDFToolStripMenuItem.Click += pDFToolStripMenuItem_Click;
             // 
             // sendEmailToolStripMenuItem
             // 
             sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
             sendEmailToolStripMenuItem.Size = new Size(97, 24);
             sendEmailToolStripMenuItem.Text = "Send Email";
+            sendEmailToolStripMenuItem.Click += sendEmailToolStripMenuItem_Click;
             // 
             // lblIntro
             // 
             lblIntro.AutoSize = true;
             lblIntro.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
-            lblIntro.Location = new Point(307, 140);
+            lblIntro.Location = new Point(320, 140);
             lblIntro.Name = "lblIntro";
             lblIntro.Size = new Size(165, 46);
             lblIntro.TabIndex = 0;
             lblIntro.Text = "INVOICES";
             // 
-            // panel1
+            // panelPrint
             // 
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(groupBox2);
-            panel1.Controls.Add(groupBox1);
-            panel1.Controls.Add(lblIntro);
-            panel1.Location = new Point(2, 54);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(797, 688);
-            panel1.TabIndex = 0;
+            panelPrint.Controls.Add(pictureBox1);
+            panelPrint.Controls.Add(groupBox2);
+            panelPrint.Controls.Add(groupBox1);
+            panelPrint.Controls.Add(lblIntro);
+            panelPrint.Location = new Point(2, 54);
+            panelPrint.Name = "panelPrint";
+            panelPrint.Size = new Size(797, 688);
+            panelPrint.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(605, 22);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(166, 164);
+            pictureBox1.TabIndex = 11;
+            pictureBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(RPhoneOutput);
+            groupBox2.Controls.Add(label6);
+            groupBox2.Controls.Add(RNameOutput);
+            groupBox2.Controls.Add(label7);
+            groupBox2.Location = new Point(52, 512);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(683, 130);
+            groupBox2.TabIndex = 10;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Receiver";
+            // 
+            // RPhoneOutput
+            // 
+            RPhoneOutput.AutoSize = true;
+            RPhoneOutput.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            RPhoneOutput.Location = new Point(100, 89);
+            RPhoneOutput.Name = "RPhoneOutput";
+            RPhoneOutput.Size = new Size(65, 28);
+            RPhoneOutput.TabIndex = 17;
+            RPhoneOutput.Text = "label5";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(21, 89);
+            label6.Name = "label6";
+            label6.Size = new Size(76, 28);
+            label6.TabIndex = 7;
+            label6.Text = "Phone:";
+            // 
+            // RNameOutput
+            // 
+            RNameOutput.AutoSize = true;
+            RNameOutput.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            RNameOutput.Location = new Point(100, 43);
+            RNameOutput.Name = "RNameOutput";
+            RNameOutput.Size = new Size(65, 28);
+            RNameOutput.TabIndex = 16;
+            RNameOutput.Text = "label5";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(21, 43);
+            label7.Name = "label7";
+            label7.Size = new Size(73, 28);
+            label7.TabIndex = 6;
+            label7.Text = "Name:";
             // 
             // groupBox1
             // 
@@ -118,6 +184,66 @@
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Sender";
+            // 
+            // dateOutput
+            // 
+            dateOutput.AutoSize = true;
+            dateOutput.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dateOutput.Location = new Point(100, 235);
+            dateOutput.Name = "dateOutput";
+            dateOutput.Size = new Size(65, 28);
+            dateOutput.TabIndex = 15;
+            dateOutput.Text = "label5";
+            // 
+            // moneyOutput
+            // 
+            moneyOutput.AutoSize = true;
+            moneyOutput.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            moneyOutput.Location = new Point(100, 186);
+            moneyOutput.Name = "moneyOutput";
+            moneyOutput.Size = new Size(65, 28);
+            moneyOutput.TabIndex = 14;
+            moneyOutput.Text = "label5";
+            // 
+            // SMailOutput
+            // 
+            SMailOutput.AutoSize = true;
+            SMailOutput.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SMailOutput.Location = new Point(100, 138);
+            SMailOutput.Name = "SMailOutput";
+            SMailOutput.Size = new Size(65, 28);
+            SMailOutput.TabIndex = 13;
+            SMailOutput.Text = "label5";
+            // 
+            // SPhoneOutput
+            // 
+            SPhoneOutput.AutoSize = true;
+            SPhoneOutput.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SPhoneOutput.Location = new Point(100, 89);
+            SPhoneOutput.Name = "SPhoneOutput";
+            SPhoneOutput.Size = new Size(65, 28);
+            SPhoneOutput.TabIndex = 12;
+            SPhoneOutput.Text = "label5";
+            // 
+            // SNameOutput
+            // 
+            SNameOutput.AutoSize = true;
+            SNameOutput.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            SNameOutput.Location = new Point(100, 43);
+            SNameOutput.Name = "SNameOutput";
+            SNameOutput.Size = new Size(65, 28);
+            SNameOutput.TabIndex = 11;
+            SNameOutput.Text = "label5";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(24, 235);
+            label8.Name = "label8";
+            label8.Size = new Size(62, 28);
+            label8.TabIndex = 10;
+            label8.Text = "Date:";
             // 
             // label4
             // 
@@ -159,146 +285,36 @@
             lblName.TabIndex = 6;
             lblName.Text = "Name:";
             // 
-            // groupBox2
+            // printPreviewDialog1
             // 
-            groupBox2.Controls.Add(RPhoneOutput);
-            groupBox2.Controls.Add(label6);
-            groupBox2.Controls.Add(RNameOutput);
-            groupBox2.Controls.Add(label7);
-            groupBox2.Location = new Point(52, 512);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(683, 130);
-            groupBox2.TabIndex = 10;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Receiver";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(21, 89);
-            label6.Name = "label6";
-            label6.Size = new Size(76, 28);
-            label6.TabIndex = 7;
-            label6.Text = "Phone:";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(21, 43);
-            label7.Name = "label7";
-            label7.Size = new Size(73, 28);
-            label7.TabIndex = 6;
-            label7.Text = "Name:";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(24, 235);
-            label8.Name = "label8";
-            label8.Size = new Size(62, 28);
-            label8.TabIndex = 10;
-            label8.Text = "Date:";
-            // 
-            // SNameOutput
-            // 
-            SNameOutput.AutoSize = true;
-            SNameOutput.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            SNameOutput.Location = new Point(100, 43);
-            SNameOutput.Name = "SNameOutput";
-            SNameOutput.Size = new Size(65, 28);
-            SNameOutput.TabIndex = 11;
-            SNameOutput.Text = "label5";
-            // 
-            // SPhoneOutput
-            // 
-            SPhoneOutput.AutoSize = true;
-            SPhoneOutput.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            SPhoneOutput.Location = new Point(100, 89);
-            SPhoneOutput.Name = "SPhoneOutput";
-            SPhoneOutput.Size = new Size(65, 28);
-            SPhoneOutput.TabIndex = 12;
-            SPhoneOutput.Text = "label5";
-            // 
-            // SMailOutput
-            // 
-            SMailOutput.AutoSize = true;
-            SMailOutput.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            SMailOutput.Location = new Point(100, 138);
-            SMailOutput.Name = "SMailOutput";
-            SMailOutput.Size = new Size(65, 28);
-            SMailOutput.TabIndex = 13;
-            SMailOutput.Text = "label5";
-            // 
-            // moneyOutput
-            // 
-            moneyOutput.AutoSize = true;
-            moneyOutput.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            moneyOutput.Location = new Point(100, 186);
-            moneyOutput.Name = "moneyOutput";
-            moneyOutput.Size = new Size(65, 28);
-            moneyOutput.TabIndex = 14;
-            moneyOutput.Text = "label5";
-            // 
-            // dateOutput
-            // 
-            dateOutput.AutoSize = true;
-            dateOutput.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dateOutput.Location = new Point(100, 235);
-            dateOutput.Name = "dateOutput";
-            dateOutput.Size = new Size(65, 28);
-            dateOutput.TabIndex = 15;
-            dateOutput.Text = "label5";
-            // 
-            // RPhoneOutput
-            // 
-            RPhoneOutput.AutoSize = true;
-            RPhoneOutput.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            RPhoneOutput.Location = new Point(100, 89);
-            RPhoneOutput.Name = "RPhoneOutput";
-            RPhoneOutput.Size = new Size(65, 28);
-            RPhoneOutput.TabIndex = 17;
-            RPhoneOutput.Text = "label5";
-            // 
-            // RNameOutput
-            // 
-            RNameOutput.AutoSize = true;
-            RNameOutput.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            RNameOutput.Location = new Point(100, 43);
-            RNameOutput.Name = "RNameOutput";
-            RNameOutput.Size = new Size(65, 28);
-            RNameOutput.TabIndex = 16;
-            RNameOutput.Text = "label5";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(605, 22);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(166, 164);
-            pictureBox1.TabIndex = 11;
-            pictureBox1.TabStop = false;
+            printPreviewDialog1.AutoScrollMargin = new Size(0, 0);
+            printPreviewDialog1.AutoScrollMinSize = new Size(0, 0);
+            printPreviewDialog1.ClientSize = new Size(400, 300);
+            printPreviewDialog1.Enabled = true;
+            printPreviewDialog1.Icon = (Icon)resources.GetObject("printPreviewDialog1.Icon");
+            printPreviewDialog1.Name = "printPreviewDialog1";
+            printPreviewDialog1.Visible = false;
             // 
             // Invoices
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 740);
-            Controls.Add(panel1);
+            Controls.Add(panelPrint);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "Invoices";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Invoices";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            panelPrint.ResumeLayout(false);
+            panelPrint.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -308,7 +324,7 @@
         private ToolStripMenuItem pDFToolStripMenuItem;
         private ToolStripMenuItem sendEmailToolStripMenuItem;
         private Label lblIntro;
-        private Panel panel1;
+        private Panel panelPrint;
         private GroupBox groupBox1;
         private Label label4;
         private Label label3;
@@ -326,5 +342,7 @@
         private Label RPhoneOutput;
         private Label RNameOutput;
         private PictureBox pictureBox1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private PrintPreviewDialog printPreviewDialog1;
     }
 }
