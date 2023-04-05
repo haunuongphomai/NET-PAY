@@ -89,7 +89,8 @@ namespace Project
                         if (value.ToString().Equals(otp.ToString()))
                         {
                             MessageBox.Show("Success");
-                        } else
+                        }
+                        else
                         {
                             MessageBox.Show("Incorrect OTP code");
                         }
@@ -216,6 +217,13 @@ namespace Project
 
             value = textBox.Text;
             return dialogResult;
+        }
+
+        private void linkLogin_Click_1(object sender, EventArgs e)
+        {
+            Login f1 = new Login();
+            f1.Show();
+            this.Hide();
         }
     }
 }
