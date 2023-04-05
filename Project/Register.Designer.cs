@@ -169,6 +169,7 @@
             linkLogin.Size = new Size(45, 18);
             linkLogin.TabIndex = 6;
             linkLogin.Text = "Login";
+            linkLogin.Click += linkLogin_Click_1;
             // 
             // password
             // 
