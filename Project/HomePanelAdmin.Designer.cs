@@ -49,9 +49,10 @@
             rdFemale.AutoSize = true;
             rdFemale.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
             rdFemale.ForeColor = Color.White;
-            rdFemale.Location = new Point(415, 425);
+            rdFemale.Location = new Point(363, 319);
+            rdFemale.Margin = new Padding(3, 2, 3, 2);
             rdFemale.Name = "rdFemale";
-            rdFemale.Size = new Size(80, 28);
+            rdFemale.Size = new Size(66, 23);
             rdFemale.TabIndex = 34;
             rdFemale.TabStop = true;
             rdFemale.Text = "Female";
@@ -62,9 +63,10 @@
             rdMale.AutoSize = true;
             rdMale.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
             rdMale.ForeColor = Color.White;
-            rdMale.Location = new Point(258, 425);
+            rdMale.Location = new Point(226, 319);
+            rdMale.Margin = new Padding(3, 2, 3, 2);
             rdMale.Name = "rdMale";
-            rdMale.Size = new Size(63, 28);
+            rdMale.Size = new Size(53, 23);
             rdMale.TabIndex = 33;
             rdMale.TabStop = true;
             rdMale.Text = "Male";
@@ -75,18 +77,19 @@
             lblGender.AutoSize = true;
             lblGender.Font = new Font("Bahnschrift", 20F, FontStyle.Bold, GraphicsUnit.Point);
             lblGender.ForeColor = Color.White;
-            lblGender.Location = new Point(91, 414);
+            lblGender.Location = new Point(80, 310);
             lblGender.Name = "lblGender";
-            lblGender.Size = new Size(134, 41);
+            lblGender.Size = new Size(106, 33);
             lblGender.TabIndex = 32;
             lblGender.Text = "Gender:";
             // 
             // txtDOB
             // 
             txtDOB.Font = new Font("Bahnschrift Condensed", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            txtDOB.Location = new Point(224, 352);
+            txtDOB.Location = new Point(196, 264);
+            txtDOB.Margin = new Padding(3, 2, 3, 2);
             txtDOB.Name = "txtDOB";
-            txtDOB.Size = new Size(341, 38);
+            txtDOB.Size = new Size(299, 32);
             txtDOB.TabIndex = 31;
             // 
             // lblDOB
@@ -94,9 +97,9 @@
             lblDOB.AutoSize = true;
             lblDOB.Font = new Font("Bahnschrift", 20F, FontStyle.Bold, GraphicsUnit.Point);
             lblDOB.ForeColor = Color.White;
-            lblDOB.Location = new Point(133, 352);
+            lblDOB.Location = new Point(116, 264);
             lblDOB.Name = "lblDOB";
-            lblDOB.Size = new Size(91, 41);
+            lblDOB.Size = new Size(72, 33);
             lblDOB.TabIndex = 30;
             lblDOB.Text = "DOB:";
             // 
@@ -105,9 +108,9 @@
             phoneOutput.AutoSize = true;
             phoneOutput.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             phoneOutput.ForeColor = Color.White;
-            phoneOutput.Location = new Point(224, 58);
+            phoneOutput.Location = new Point(196, 44);
             phoneOutput.Name = "phoneOutput";
-            phoneOutput.Size = new Size(0, 41);
+            phoneOutput.Size = new Size(0, 32);
             phoneOutput.TabIndex = 29;
             // 
             // moneyOutput
@@ -115,17 +118,18 @@
             moneyOutput.AutoSize = true;
             moneyOutput.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             moneyOutput.ForeColor = Color.White;
-            moneyOutput.Location = new Point(224, 125);
+            moneyOutput.Location = new Point(196, 94);
             moneyOutput.Name = "moneyOutput";
-            moneyOutput.Size = new Size(0, 41);
+            moneyOutput.Size = new Size(0, 32);
             moneyOutput.TabIndex = 28;
             // 
             // btnUpdate
             // 
-            btnUpdate.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnUpdate.Location = new Point(369, 550);
+            btnUpdate.Font = new Font("Bahnschrift Condensed", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnUpdate.Location = new Point(323, 412);
+            btnUpdate.Margin = new Padding(3, 2, 3, 2);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(258, 55);
+            btnUpdate.Size = new Size(226, 41);
             btnUpdate.TabIndex = 27;
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = true;
@@ -135,18 +139,19 @@
             lblPass.AutoSize = true;
             lblPass.Font = new Font("Bahnschrift", 20F, FontStyle.Bold, GraphicsUnit.Point);
             lblPass.ForeColor = Color.White;
-            lblPass.Location = new Point(47, 275);
+            lblPass.Location = new Point(41, 206);
             lblPass.Name = "lblPass";
-            lblPass.Size = new Size(178, 41);
+            lblPass.Size = new Size(142, 33);
             lblPass.TabIndex = 26;
             lblPass.Text = "Password:";
             // 
             // txtPass
             // 
             txtPass.Font = new Font("Bahnschrift", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPass.Location = new Point(224, 283);
+            txtPass.Location = new Point(196, 212);
+            txtPass.Margin = new Padding(3, 2, 3, 2);
             txtPass.Name = "txtPass";
-            txtPass.Size = new Size(306, 34);
+            txtPass.Size = new Size(268, 28);
             txtPass.TabIndex = 25;
             // 
             // lblName
@@ -154,18 +159,19 @@
             lblName.AutoSize = true;
             lblName.Font = new Font("Bahnschrift", 20F, FontStyle.Bold, GraphicsUnit.Point);
             lblName.ForeColor = Color.White;
-            lblName.Location = new Point(104, 197);
+            lblName.Location = new Point(91, 148);
             lblName.Name = "lblName";
-            lblName.Size = new Size(114, 41);
+            lblName.Size = new Size(90, 33);
             lblName.TabIndex = 24;
             lblName.Text = "Name:";
             // 
             // txtName
             // 
             txtName.Font = new Font("Bahnschrift", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            txtName.Location = new Point(224, 204);
+            txtName.Location = new Point(196, 153);
+            txtName.Margin = new Padding(3, 2, 3, 2);
             txtName.Name = "txtName";
-            txtName.Size = new Size(306, 34);
+            txtName.Size = new Size(268, 28);
             txtName.TabIndex = 23;
             // 
             // lblMoney
@@ -173,9 +179,9 @@
             lblMoney.AutoSize = true;
             lblMoney.Font = new Font("Bahnschrift", 20F, FontStyle.Bold, GraphicsUnit.Point);
             lblMoney.ForeColor = Color.White;
-            lblMoney.Location = new Point(97, 125);
+            lblMoney.Location = new Point(85, 94);
             lblMoney.Name = "lblMoney";
-            lblMoney.Size = new Size(121, 41);
+            lblMoney.Size = new Size(96, 33);
             lblMoney.TabIndex = 22;
             lblMoney.Text = "Money:";
             // 
@@ -184,15 +190,15 @@
             lblPhone.AutoSize = true;
             lblPhone.Font = new Font("Bahnschrift", 20F, FontStyle.Bold, GraphicsUnit.Point);
             lblPhone.ForeColor = Color.White;
-            lblPhone.Location = new Point(97, 58);
+            lblPhone.Location = new Point(85, 44);
             lblPhone.Name = "lblPhone";
-            lblPhone.Size = new Size(121, 41);
+            lblPhone.Size = new Size(96, 33);
             lblPhone.TabIndex = 21;
             lblPhone.Text = "Phone:";
             // 
             // HomePanelAdmin
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(57, 62, 70);
             Controls.Add(rdFemale);
@@ -209,8 +215,9 @@
             Controls.Add(txtName);
             Controls.Add(lblMoney);
             Controls.Add(lblPhone);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "HomePanelAdmin";
-            Size = new Size(984, 642);
+            Size = new Size(861, 482);
             ResumeLayout(false);
             PerformLayout();
         }

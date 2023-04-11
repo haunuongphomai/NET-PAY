@@ -1,14 +1,4 @@
-﻿using AForge.Video.DirectShow;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Diagnostics;
 
 namespace Project
 {
@@ -37,7 +27,6 @@ namespace Project
         public Home()
         {
             InitializeComponent();
-            panel1.BringToFront();
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -47,12 +36,6 @@ namespace Project
             home.Dock = DockStyle.Fill;
             Container.Controls.Add(home);
             lblGreeting.Text = "Hi " + acc.Instance.getUsername + ", Welcome to NET PAYPAL!";
-
-            if (search.Text.Length == 0)
-            {
-                search.Text = "Search";
-                search.ForeColor = Color.Silver;
-            }
         }
 
         private void btnTest_Click(object sender, EventArgs e)
@@ -82,23 +65,6 @@ namespace Project
             Debug.Print(acc.Instance.getBalance);
         }
 
-        private void search_Leave(object sender, EventArgs e)
-        {
-            if (search.Text.Length == 0)
-            {
-                search.Text = "Search";
-                search.ForeColor = Color.Silver;
-            }
-        }
-
-        private void search_Enter(object sender, EventArgs e)
-        {
-            if (search.Text == "Search")
-            {
-                search.Text = "";
-                search.ForeColor = Color.Black;
-            }
-        }
 
         private void btnTransaction_Click(object sender, EventArgs e)
         {
@@ -118,21 +84,21 @@ namespace Project
         {
             if (isColapse)
             {
-                panel1.Height += 10;
-                if (panel1.Size == panel1.MaximumSize)
-                {
-                    timer1.Stop();
-                    isColapse = false;
-                }
+                //panel1.Height += 10;
+                //if (panel1.Size == panel1.MaximumSize)
+                //{
+                //    timer1.Stop();
+                //    isColapse = false;
+                //}
             }
             else
             {
-                panel1.Height -= 10;
-                if (panel1.Size == panel1.MinimumSize)
-                {
-                    timer1.Stop();
-                    isColapse = true;
-                }
+                //panel1.Height -= 10;
+                //if (panel1.Size == panel1.MinimumSize)
+                //{
+                //    timer1.Stop();
+                //    isColapse = true;
+                //}
             }
 
 
@@ -166,11 +132,6 @@ namespace Project
             {
                 AccountSetting.instance.BringToFront();
             }
-        }
-
-        private void btnNotif_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

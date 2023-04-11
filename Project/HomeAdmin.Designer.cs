@@ -168,7 +168,7 @@
             // 
             // HomeAdmin
             // 
-            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(57, 62, 70);
             ClientSize = new Size(1256, 700);

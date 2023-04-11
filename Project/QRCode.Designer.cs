@@ -38,9 +38,10 @@
             // imgQRCode
             // 
             imgQRCode.BackColor = Color.White;
-            imgQRCode.Location = new Point(29, 12);
+            imgQRCode.Location = new Point(1, 2);
+            imgQRCode.Margin = new Padding(3, 2, 3, 2);
             imgQRCode.Name = "imgQRCode";
-            imgQRCode.Size = new Size(570, 378);
+            imgQRCode.Size = new Size(841, 505);
             imgQRCode.TabIndex = 15;
             imgQRCode.TabStop = false;
             // 
@@ -48,9 +49,10 @@
             // 
             cboDevice.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             cboDevice.FormattingEnabled = true;
-            cboDevice.Location = new Point(29, 12);
+            cboDevice.Location = new Point(25, 9);
+            cboDevice.Margin = new Padding(3, 2, 3, 2);
             cboDevice.Name = "cboDevice";
-            cboDevice.Size = new Size(516, 49);
+            cboDevice.Size = new Size(452, 40);
             cboDevice.TabIndex = 16;
             // 
             // timer1
@@ -59,18 +61,19 @@
             // 
             // QRCode
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(620, 409);
+            ClientSize = new Size(825, 513);
             Controls.Add(cboDevice);
             Controls.Add(imgQRCode);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "QRCode";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "QRCode";
             FormClosing += QRCode_FormClosing;
             Load += QRCode_Load;
             ((System.ComponentModel.ISupportInitialize)imgQRCode).EndInit();
             ResumeLayout(false);
-            StartPosition = FormStartPosition.CenterScreen;
         }
 
         #endregion

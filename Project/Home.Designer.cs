@@ -31,9 +31,6 @@
             components = new System.ComponentModel.Container();
             actionBar = new Panel();
             btnPanel = new Panel();
-            panel1 = new Panel();
-            modifAcc = new Button();
-            button2 = new Button();
             btnLogOut = new Button();
             btnTransaction = new Button();
             btnHistory = new Button();
@@ -43,12 +40,11 @@
             header = new Panel();
             button1 = new Button();
             lblGreeting = new Label();
-            search = new TextBox();
             voidPanel = new Panel();
             timer1 = new System.Windows.Forms.Timer(components);
+            button2 = new Button();
             actionBar.SuspendLayout();
             btnPanel.SuspendLayout();
-            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logo).BeginInit();
             header.SuspendLayout();
             SuspendLayout();
@@ -66,7 +62,8 @@
             // btnPanel
             // 
             btnPanel.BackColor = Color.FromArgb(203, 228, 222);
-            btnPanel.Controls.Add(panel1);
+            btnPanel.Controls.Add(button2);
+            btnPanel.Controls.Add(btnLogOut);
             btnPanel.Controls.Add(btnTransaction);
             btnPanel.Controls.Add(btnHistory);
             btnPanel.Controls.Add(btnExit);
@@ -76,45 +73,11 @@
             btnPanel.Size = new Size(272, 502);
             btnPanel.TabIndex = 0;
             // 
-            // panel1
-            // 
-            panel1.Controls.Add(modifAcc);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(btnLogOut);
-            panel1.Location = new Point(58, 156);
-            panel1.MaximumSize = new Size(140, 156);
-            panel1.MinimumSize = new Size(140, 57);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(140, 57);
-            panel1.TabIndex = 0;
-            // 
-            // modifAcc
-            // 
-            modifAcc.Dock = DockStyle.Top;
-            modifAcc.Location = new Point(0, 56);
-            modifAcc.Name = "modifAcc";
-            modifAcc.Size = new Size(140, 51);
-            modifAcc.TabIndex = 5;
-            modifAcc.Text = "Account Settings";
-            modifAcc.UseVisualStyleBackColor = true;
-            modifAcc.Click += modifAcc_Click;
-            // 
-            // button2
-            // 
-            button2.Dock = DockStyle.Top;
-            button2.Location = new Point(0, 0);
-            button2.Name = "button2";
-            button2.Size = new Size(140, 56);
-            button2.TabIndex = 9;
-            button2.Text = "Account";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
             // btnLogOut
             // 
-            btnLogOut.Location = new Point(0, 103);
+            btnLogOut.Location = new Point(0, 229);
             btnLogOut.Name = "btnLogOut";
-            btnLogOut.Size = new Size(137, 51);
+            btnLogOut.Size = new Size(272, 60);
             btnLogOut.TabIndex = 6;
             btnLogOut.Text = "Logout";
             btnLogOut.UseVisualStyleBackColor = true;
@@ -122,9 +85,9 @@
             // 
             // btnTransaction
             // 
-            btnTransaction.Location = new Point(83, 76);
+            btnTransaction.Location = new Point(0, 55);
             btnTransaction.Name = "btnTransaction";
-            btnTransaction.Size = new Size(94, 29);
+            btnTransaction.Size = new Size(272, 60);
             btnTransaction.TabIndex = 3;
             btnTransaction.Text = "Transaction";
             btnTransaction.UseVisualStyleBackColor = true;
@@ -132,9 +95,9 @@
             // 
             // btnHistory
             // 
-            btnHistory.Location = new Point(83, 121);
+            btnHistory.Location = new Point(1, 114);
             btnHistory.Name = "btnHistory";
-            btnHistory.Size = new Size(94, 29);
+            btnHistory.Size = new Size(272, 60);
             btnHistory.TabIndex = 2;
             btnHistory.Text = "History";
             btnHistory.UseVisualStyleBackColor = true;
@@ -152,9 +115,9 @@
             // 
             // btnHome
             // 
-            btnHome.Location = new Point(83, 32);
+            btnHome.Location = new Point(0, 0);
             btnHome.Name = "btnHome";
-            btnHome.Size = new Size(94, 29);
+            btnHome.Size = new Size(272, 60);
             btnHome.TabIndex = 0;
             btnHome.Text = "Home";
             btnHome.UseVisualStyleBackColor = true;
@@ -176,7 +139,6 @@
             header.BackColor = Color.FromArgb(34, 40, 49);
             header.Controls.Add(button1);
             header.Controls.Add(lblGreeting);
-            header.Controls.Add(search);
             header.Location = new Point(272, 0);
             header.Name = "header";
             header.Size = new Size(984, 58);
@@ -202,20 +164,8 @@
             lblGreeting.ForeColor = Color.White;
             lblGreeting.Location = new Point(75, 15);
             lblGreeting.Name = "lblGreeting";
-            lblGreeting.Size = new Size(364, 33);
+            lblGreeting.Size = new Size(0, 27);
             lblGreeting.TabIndex = 0;
-            
-            // 
-            // search
-            // 
-            search.Font = new Font("Bahnschrift", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            search.ForeColor = Color.FromArgb(153, 153, 153);
-            search.Location = new Point(605, 15);
-            search.Name = "search";
-            search.Size = new Size(350, 34);
-            search.TabIndex = 2;
-            search.Enter += search_Enter;
-            search.Leave += search_Leave;
             // 
             // voidPanel
             // 
@@ -230,9 +180,18 @@
             timer1.Interval = 15;
             timer1.Tick += timer1_Tick;
             // 
+            // button2
+            // 
+            button2.Location = new Point(1, 171);
+            button2.Name = "button2";
+            button2.Size = new Size(272, 60);
+            button2.TabIndex = 7;
+            button2.Text = "Account";
+            button2.UseVisualStyleBackColor = true;
+            // 
             // Home
             // 
-            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(57, 62, 70);
             ClientSize = new Size(1256, 700);
@@ -247,7 +206,6 @@
             actionBar.ResumeLayout(false);
             actionBar.PerformLayout();
             btnPanel.ResumeLayout(false);
-            panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)logo).EndInit();
             header.ResumeLayout(false);
             header.PerformLayout();
@@ -259,7 +217,6 @@
         private Panel header;
         private PictureBox logo;
         private Label lblGreeting;
-        private TextBox search;
 
         #endregion
         private Button btnHome;
@@ -269,9 +226,7 @@
         private Button btnTransaction;
         private System.Windows.Forms.Timer timer1;
         private Button button1;
-        private Panel panel1;
-        private Button modifAcc;
-        private Button button2;
         private Button btnLogOut;
+        private Button button2;
     }
 }
