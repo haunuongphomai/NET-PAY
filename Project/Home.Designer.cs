@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             actionBar = new Panel();
             btnPanel = new Panel();
+            button2 = new Button();
             btnLogOut = new Button();
             btnTransaction = new Button();
             btnHistory = new Button();
@@ -42,7 +43,6 @@
             lblGreeting = new Label();
             voidPanel = new Panel();
             timer1 = new System.Windows.Forms.Timer(components);
-            button2 = new Button();
             actionBar.SuspendLayout();
             btnPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logo).BeginInit();
@@ -55,8 +55,9 @@
             actionBar.Controls.Add(btnPanel);
             actionBar.Controls.Add(logo);
             actionBar.Location = new Point(0, 0);
+            actionBar.Margin = new Padding(4, 4, 4, 4);
             actionBar.Name = "actionBar";
-            actionBar.Size = new Size(272, 700);
+            actionBar.Size = new Size(340, 875);
             actionBar.TabIndex = 0;
             // 
             // btnPanel
@@ -68,16 +69,29 @@
             btnPanel.Controls.Add(btnHistory);
             btnPanel.Controls.Add(btnExit);
             btnPanel.Controls.Add(btnHome);
-            btnPanel.Location = new Point(0, 198);
+            btnPanel.Location = new Point(0, 248);
+            btnPanel.Margin = new Padding(4, 4, 4, 4);
             btnPanel.Name = "btnPanel";
-            btnPanel.Size = new Size(272, 502);
+            btnPanel.Size = new Size(340, 628);
             btnPanel.TabIndex = 0;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(1, 214);
+            button2.Margin = new Padding(4, 4, 4, 4);
+            button2.Name = "button2";
+            button2.Size = new Size(340, 75);
+            button2.TabIndex = 7;
+            button2.Text = "Account";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click_1;
             // 
             // btnLogOut
             // 
-            btnLogOut.Location = new Point(0, 229);
+            btnLogOut.Location = new Point(0, 286);
+            btnLogOut.Margin = new Padding(4, 4, 4, 4);
             btnLogOut.Name = "btnLogOut";
-            btnLogOut.Size = new Size(272, 60);
+            btnLogOut.Size = new Size(340, 75);
             btnLogOut.TabIndex = 6;
             btnLogOut.Text = "Logout";
             btnLogOut.UseVisualStyleBackColor = true;
@@ -85,9 +99,10 @@
             // 
             // btnTransaction
             // 
-            btnTransaction.Location = new Point(0, 55);
+            btnTransaction.Location = new Point(0, 69);
+            btnTransaction.Margin = new Padding(4, 4, 4, 4);
             btnTransaction.Name = "btnTransaction";
-            btnTransaction.Size = new Size(272, 60);
+            btnTransaction.Size = new Size(340, 75);
             btnTransaction.TabIndex = 3;
             btnTransaction.Text = "Transaction";
             btnTransaction.UseVisualStyleBackColor = true;
@@ -95,9 +110,10 @@
             // 
             // btnHistory
             // 
-            btnHistory.Location = new Point(1, 114);
+            btnHistory.Location = new Point(1, 142);
+            btnHistory.Margin = new Padding(4, 4, 4, 4);
             btnHistory.Name = "btnHistory";
-            btnHistory.Size = new Size(272, 60);
+            btnHistory.Size = new Size(340, 75);
             btnHistory.TabIndex = 2;
             btnHistory.Text = "History";
             btnHistory.UseVisualStyleBackColor = true;
@@ -105,9 +121,10 @@
             // 
             // btnExit
             // 
-            btnExit.Location = new Point(83, 444);
+            btnExit.Location = new Point(104, 555);
+            btnExit.Margin = new Padding(4, 4, 4, 4);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(94, 29);
+            btnExit.Size = new Size(118, 36);
             btnExit.TabIndex = 1;
             btnExit.Text = "Exit";
             btnExit.UseVisualStyleBackColor = true;
@@ -116,8 +133,9 @@
             // btnHome
             // 
             btnHome.Location = new Point(0, 0);
+            btnHome.Margin = new Padding(4, 4, 4, 4);
             btnHome.Name = "btnHome";
-            btnHome.Size = new Size(272, 60);
+            btnHome.Size = new Size(340, 75);
             btnHome.TabIndex = 0;
             btnHome.Text = "Home";
             btnHome.UseVisualStyleBackColor = true;
@@ -127,7 +145,8 @@
             // 
             logo.BackColor = Color.Transparent;
             logo.Image = Properties.Resources.logo;
-            logo.Location = new Point(36, 50);
+            logo.Location = new Point(45, 62);
+            logo.Margin = new Padding(4, 4, 4, 4);
             logo.Name = "logo";
             logo.Size = new Size(200, 78);
             logo.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -139,9 +158,10 @@
             header.BackColor = Color.FromArgb(34, 40, 49);
             header.Controls.Add(button1);
             header.Controls.Add(lblGreeting);
-            header.Location = new Point(272, 0);
+            header.Location = new Point(340, 0);
+            header.Margin = new Padding(4, 4, 4, 4);
             header.Name = "header";
-            header.Size = new Size(984, 58);
+            header.Size = new Size(1230, 72);
             header.TabIndex = 1;
             // 
             // button1
@@ -150,9 +170,10 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Image = Properties.Resources.avatar;
-            button1.Location = new Point(6, 3);
+            button1.Location = new Point(8, 4);
+            button1.Margin = new Padding(4, 4, 4, 4);
             button1.Name = "button1";
-            button1.Size = new Size(63, 55);
+            button1.Size = new Size(79, 69);
             button1.TabIndex = 3;
             button1.UseVisualStyleBackColor = false;
             // 
@@ -162,17 +183,19 @@
             lblGreeting.BackColor = Color.Transparent;
             lblGreeting.Font = new Font("Bahnschrift", 16F, FontStyle.Regular, GraphicsUnit.Point);
             lblGreeting.ForeColor = Color.White;
-            lblGreeting.Location = new Point(75, 15);
+            lblGreeting.Location = new Point(94, 19);
+            lblGreeting.Margin = new Padding(4, 0, 4, 0);
             lblGreeting.Name = "lblGreeting";
-            lblGreeting.Size = new Size(0, 27);
+            lblGreeting.Size = new Size(0, 33);
             lblGreeting.TabIndex = 0;
             // 
             // voidPanel
             // 
             voidPanel.ImeMode = ImeMode.Katakana;
-            voidPanel.Location = new Point(272, 58);
+            voidPanel.Location = new Point(340, 72);
+            voidPanel.Margin = new Padding(4, 4, 4, 4);
             voidPanel.Name = "voidPanel";
-            voidPanel.Size = new Size(984, 642);
+            voidPanel.Size = new Size(1230, 802);
             voidPanel.TabIndex = 2;
             // 
             // timer1
@@ -180,25 +203,17 @@
             timer1.Interval = 15;
             timer1.Tick += timer1_Tick;
             // 
-            // button2
-            // 
-            button2.Location = new Point(1, 171);
-            button2.Name = "button2";
-            button2.Size = new Size(272, 60);
-            button2.TabIndex = 7;
-            button2.Text = "Account";
-            button2.UseVisualStyleBackColor = true;
-            // 
             // Home
             // 
-            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(57, 62, 70);
-            ClientSize = new Size(1256, 700);
+            ClientSize = new Size(1570, 875);
             Controls.Add(voidPanel);
             Controls.Add(actionBar);
             Controls.Add(header);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 4, 4, 4);
             Name = "Home";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Home";

@@ -10,7 +10,7 @@ namespace Project
         {
             try
             {
-                con = new SqlConnection("Data Source=TUFGAMING;Initial Catalog=project;Integrated Security=True");
+                con = new SqlConnection("Server = TUONGVI\\SQLEXPRESS; database = project; Integrated Security = true");
                 con.Open();
             }
             catch (Exception)
