@@ -31,14 +31,13 @@
             components = new System.ComponentModel.Container();
             actionBar = new Panel();
             btnPanel = new Panel();
-            panel1 = new Panel();
-            modifAcc = new Button();
-            button2 = new Button();
-            btnLogOut = new Button();
             btnTransaction = new Button();
             btnHistory = new Button();
             btnExit = new Button();
             btnHome = new Button();
+            modifAcc = new Button();
+            button2 = new Button();
+            btnLogOut = new Button();
             logo = new PictureBox();
             header = new Panel();
             button1 = new Button();
@@ -48,7 +47,6 @@
             timer1 = new System.Windows.Forms.Timer(components);
             actionBar.SuspendLayout();
             btnPanel.SuspendLayout();
-            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logo).BeginInit();
             header.SuspendLayout();
             SuspendLayout();
@@ -66,59 +64,17 @@
             // btnPanel
             // 
             btnPanel.BackColor = Color.FromArgb(203, 228, 222);
-            btnPanel.Controls.Add(panel1);
             btnPanel.Controls.Add(btnTransaction);
             btnPanel.Controls.Add(btnHistory);
             btnPanel.Controls.Add(btnExit);
             btnPanel.Controls.Add(btnHome);
+            btnPanel.Controls.Add(modifAcc);
+            btnPanel.Controls.Add(button2);
+            btnPanel.Controls.Add(btnLogOut);
             btnPanel.Location = new Point(0, 198);
             btnPanel.Name = "btnPanel";
             btnPanel.Size = new Size(272, 502);
             btnPanel.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(modifAcc);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(btnLogOut);
-            panel1.Location = new Point(58, 156);
-            panel1.MaximumSize = new Size(140, 156);
-            panel1.MinimumSize = new Size(140, 57);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(140, 57);
-            panel1.TabIndex = 0;
-            // 
-            // modifAcc
-            // 
-            modifAcc.Dock = DockStyle.Top;
-            modifAcc.Location = new Point(0, 56);
-            modifAcc.Name = "modifAcc";
-            modifAcc.Size = new Size(140, 51);
-            modifAcc.TabIndex = 5;
-            modifAcc.Text = "Account Settings";
-            modifAcc.UseVisualStyleBackColor = true;
-            modifAcc.Click += modifAcc_Click;
-            // 
-            // button2
-            // 
-            button2.Dock = DockStyle.Top;
-            button2.Location = new Point(0, 0);
-            button2.Name = "button2";
-            button2.Size = new Size(140, 56);
-            button2.TabIndex = 9;
-            button2.Text = "Account";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
-            // btnLogOut
-            // 
-            btnLogOut.Location = new Point(0, 103);
-            btnLogOut.Name = "btnLogOut";
-            btnLogOut.Size = new Size(137, 51);
-            btnLogOut.TabIndex = 6;
-            btnLogOut.Text = "Logout";
-            btnLogOut.UseVisualStyleBackColor = true;
-            btnLogOut.Click += btnLogOut_Click;
             // 
             // btnTransaction
             // 
@@ -159,6 +115,36 @@
             btnHome.Text = "Home";
             btnHome.UseVisualStyleBackColor = true;
             btnHome.Click += btnHome_Click;
+            // 
+            // modifAcc
+            // 
+            modifAcc.Location = new Point(55, 299);
+            modifAcc.Name = "modifAcc";
+            modifAcc.Size = new Size(140, 51);
+            modifAcc.TabIndex = 5;
+            modifAcc.Text = "Account Settings";
+            modifAcc.UseVisualStyleBackColor = true;
+            modifAcc.Click += modifAcc_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(52, 178);
+            button2.Name = "button2";
+            button2.Size = new Size(140, 56);
+            button2.TabIndex = 9;
+            button2.Text = "Account";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // btnLogOut
+            // 
+            btnLogOut.Location = new Point(55, 242);
+            btnLogOut.Name = "btnLogOut";
+            btnLogOut.Size = new Size(137, 51);
+            btnLogOut.TabIndex = 6;
+            btnLogOut.Text = "Logout";
+            btnLogOut.UseVisualStyleBackColor = true;
+            btnLogOut.Click += btnLogOut_Click;
             // 
             // logo
             // 
@@ -202,9 +188,8 @@
             lblGreeting.ForeColor = Color.White;
             lblGreeting.Location = new Point(75, 15);
             lblGreeting.Name = "lblGreeting";
-            lblGreeting.Size = new Size(364, 33);
+            lblGreeting.Size = new Size(0, 33);
             lblGreeting.TabIndex = 0;
-            
             // 
             // search
             // 
@@ -227,8 +212,6 @@
             // 
             // timer1
             // 
-            timer1.Interval = 15;
-            timer1.Tick += timer1_Tick;
             // 
             // Home
             // 
@@ -247,7 +230,6 @@
             actionBar.ResumeLayout(false);
             actionBar.PerformLayout();
             btnPanel.ResumeLayout(false);
-            panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)logo).EndInit();
             header.ResumeLayout(false);
             header.PerformLayout();
@@ -269,7 +251,6 @@
         private Button btnTransaction;
         private System.Windows.Forms.Timer timer1;
         private Button button1;
-        private Panel panel1;
         private Button modifAcc;
         private Button button2;
         private Button btnLogOut;
