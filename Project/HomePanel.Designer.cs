@@ -101,6 +101,8 @@ namespace Project
             creditcardBehind.Controls.Add(accountName);
             creditcardBehind.Controls.Add(startDay);
             creditcardBehind.Controls.Add(cvv);
+            creditcardBehind.Controls.Add(lblPhone);
+            creditcardBehind.Controls.Add(lblName);
             creditcardBehind.Image = Properties.Resources.creditcard;
             creditcardBehind.Location = new Point(544, 36);
             creditcardBehind.Name = "creditcardBehind";
@@ -231,6 +233,7 @@ namespace Project
             lblPhone.Name = "lblPhone";
             lblPhone.Size = new Size(0, 38);
             lblPhone.TabIndex = 31;
+            lblPhone.Text = acc.Instance.getPhone;
             // 
             // lblName
             // 
@@ -241,6 +244,7 @@ namespace Project
             lblName.Name = "lblName";
             lblName.Size = new Size(0, 38);
             lblName.TabIndex = 32;
+            lblName.Text = acc.Instance.getUsername;
             // 
             // IdOutput
             // 

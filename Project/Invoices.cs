@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Printing;
+using Microsoft.Office.Interop.Excel;
+using static System.Net.WebRequestMethods;
+using System.Net.Mail;
+using System.Net;
 
 namespace Project
 {
@@ -86,7 +90,7 @@ namespace Project
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
-            Rectangle pagearea = e.PageBounds;
+            System.Drawing.Rectangle pagearea = e.PageBounds;
             e.Graphics.DrawImage(memoryimg, (pagearea.Width / 2) - (this.panelPrint.Width / 2), this.panelPrint.Location.Y);
         }
 
@@ -103,12 +107,46 @@ namespace Project
         private void getprintarea(Panel pnl)
         {
             memoryimg = new Bitmap(pnl.Width, pnl.Height);
-            pnl.DrawToBitmap(memoryimg, new Rectangle(0, 0, pnl.Width, pnl.Height));
+            pnl.DrawToBitmap(memoryimg, new System.Drawing.Rectangle(0, 0, pnl.Width, pnl.Height));
         }
 
         private void sendEmailToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            var fromAddress = new MailAddress("netpaycompanyvn@gmail.com");
+            var toAddress = new MailAddress(acc.Instance.getEmail);
+            const string frompass = "hfgzikchagrvpmkm";
+            const string subject = "Invoices";
 
+            var smtp = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromAddress.Address, frompass),
+                Timeout = 200000,
+                EnableSsl = true,
+            };
+
+            Bitmap bmp = new Bitmap(panelPrint.Width, panelPrint.Height);
+            panelPrint.DrawToBitmap(bmp, new System.Drawing.Rectangle(0, 0, bmp.Width, bmp.Height));
+            MailMessage message = new MailMessage();
+
+            message.From = new MailAddress(fromAddress.Address);
+            message.To.Add(toAddress.Address);
+
+            message.Subject = subject;
+            message.Body = "Your invoices";
+
+            MemoryStream stream = new MemoryStream();
+            bmp.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+            stream.Position = 0;
+            Attachment attachment = new Attachment(stream, "picture.jpg");
+            message.Attachments.Add(attachment);
+
+            smtp.Send(message);
+            stream.Dispose();
         }
     }
 }

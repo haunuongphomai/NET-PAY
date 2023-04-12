@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uDOCA0vSrdH8qF3ZLZQHZzUq70aXVUDiEGIC2urwtHD5Yauf8lyEglPGoiIqVj2KQERA3EV0DSISaZ4n9twWYA==",
+  "dgSpecHash": "JFK/M1ld3G3vze8o/S/cBM6pxZ8ZWkNmaqcPBw9ofegFtpm31dvBi0VQqtLTWqghgTi2zzQWyPjDk3NMPcJ8UA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\phanb\\Desktop\\Net-Pay\\Project\\Project.csproj",
+  "projectFilePath": "C:\\Users\\phanb\\Desktop\\Net-Pay - Copy\\Project\\Project.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\phanb\\.nuget\\packages\\aforge\\2.2.5\\aforge.2.2.5.nupkg.sha512",
     "C:\\Users\\phanb\\.nuget\\packages\\aforge.video\\2.2.5\\aforge.video.2.2.5.nupkg.sha512",
