@@ -89,6 +89,22 @@ namespace Project
                         if (value.ToString().Equals(otp.ToString()))
                         {
                             MessageBox.Show("Success");
+                            clsDatabase.OpenConnection();
+                            SqlCommand query = new SqlCommand("insert into users values (@username, @phone, @dob, @pass, 15000000, @gender, @email, 0, 1)", clsDatabase.con);
+                            query.Parameters.AddWithValue("username", name);
+                            query.Parameters.AddWithValue("phone", phone);
+                            query.Parameters.AddWithValue("email", email);
+                            query.Parameters.AddWithValue("pass", pass);
+                            query.Parameters.AddWithValue("gender", gender);
+                            query.Parameters.Add("@dob", SqlDbType.Date).Value = dobInput.Value.Date;
+
+                            query.ExecuteNonQuery();
+
+                            getInfor();
+
+                            Home h1 = new Home();
+                            h1.Show();
+                            this.Hide();
                         }
                         else
                         {
@@ -224,6 +240,17 @@ namespace Project
             Login f1 = new Login();
             f1.Show();
             this.Hide();
+        }
+
+        private void getInfor()
+        {
+            acc.Instance.getUsername = usernameInput.Text;
+            acc.Instance.getBalance = "15000000";
+            acc.Instance.getPhone = numberPhoneInput.Text;
+            acc.Instance.getPassword = passwordInput.Text;
+            acc.Instance.getGender = isGender();
+            acc.Instance.getEmail = emailInput.Text;
+            acc.Instance.getType = "0";
         }
     }
 }

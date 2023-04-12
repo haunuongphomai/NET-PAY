@@ -133,5 +133,19 @@ namespace Project
                 AccountSetting.instance.BringToFront();
             }
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            if (!voidPanel.Controls.Contains(AccountSetting.instance))
+            {
+                voidPanel.Controls.Add(AccountSetting.instance);
+                AccountSetting.instance.Dock = DockStyle.Fill;
+                AccountSetting.instance.BringToFront();
+            }
+            else
+            {
+                AccountSetting.instance.BringToFront();
+            }
+        }
     }
 }
