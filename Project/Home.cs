@@ -37,7 +37,6 @@ namespace Project
         public Home()
         {
             InitializeComponent();
-            panel1.BringToFront();
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -112,30 +111,6 @@ namespace Project
             {
                 TransactionPanel.instance.BringToFront();
             }
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (isColapse)
-            {
-                panel1.Height += 10;
-                if (panel1.Size == panel1.MaximumSize)
-                {
-                    timer1.Stop();
-                    isColapse = false;
-                }
-            }
-            else
-            {
-                panel1.Height -= 10;
-                if (panel1.Size == panel1.MinimumSize)
-                {
-                    timer1.Stop();
-                    isColapse = true;
-                }
-            }
-
-
         }
 
         private void button2_Click(object sender, EventArgs e)

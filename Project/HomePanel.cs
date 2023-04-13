@@ -47,9 +47,25 @@ namespace Project
             lblBalance.Text = newString;
         }
 
+        private String addDot(String a)
+        {
+            string result = "";
+            for (int i = a.Length - 1; i >= 0; i--)
+            {
+                result = a[i] + result;
+                if ((a.Length - i) % 3 == 0 && i != 0)
+                {
+                    result = "." + result;
+                }
+            }
+
+            return result;
+        }
+
         public void getInfor()
         {
-            lblBalance.Text = string.Format("{0:n}", double.Parse(acc.Instance.getBalance));
+            //lblBalance.Text = string.Format("{0:n}", double.Parse(acc.Instance.getBalance));
+            lblBalance.Text = addDot(acc.Instance.getBalance);
             lblName.Text = acc.Instance.getUsername;
             lblPhone.Text = acc.Instance.getPhone;
         }
