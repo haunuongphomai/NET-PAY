@@ -77,7 +77,7 @@ namespace Project
             nameCard.ForeColor = Color.White;
             nameCard.Location = new Point(10, 10);
             nameCard.Name = "nameCard";
-            nameCard.Size = new Size(134, 27);
+            nameCard.Size = new Size(110, 22);
             nameCard.TabIndex = 0;
             nameCard.Text = "NET PAYPAL";
             // 
@@ -89,7 +89,7 @@ namespace Project
             visa.ForeColor = Color.White;
             visa.Location = new Point(355, 200);
             visa.Name = "visa";
-            visa.Size = new Size(66, 30);
+            visa.Size = new Size(53, 24);
             visa.TabIndex = 1;
             visa.Text = "VISA";
             // 
@@ -125,7 +125,7 @@ namespace Project
             accountId.ForeColor = Color.White;
             accountId.Location = new Point(10, 100);
             accountId.Name = "accountId";
-            accountId.Size = new Size(111, 24);
+            accountId.Size = new Size(90, 19);
             accountId.TabIndex = 1;
             accountId.Text = "Account ID:";
             // 
@@ -137,7 +137,7 @@ namespace Project
             accountName.ForeColor = Color.White;
             accountName.Location = new Point(10, 130);
             accountName.Name = "accountName";
-            accountName.Size = new Size(68, 24);
+            accountName.Size = new Size(56, 19);
             accountName.TabIndex = 2;
             accountName.Text = "Name:";
             // 
@@ -149,7 +149,7 @@ namespace Project
             startDay.ForeColor = Color.White;
             startDay.Location = new Point(10, 180);
             startDay.Name = "startDay";
-            startDay.Size = new Size(57, 34);
+            startDay.Size = new Size(46, 26);
             startDay.TabIndex = 3;
             startDay.Text = "Expired\r\nEnd:";
             // 
@@ -161,7 +161,7 @@ namespace Project
             cvv.ForeColor = Color.White;
             cvv.Location = new Point(150, 190);
             cvv.Name = "cvv";
-            cvv.Size = new Size(36, 17);
+            cvv.Size = new Size(28, 13);
             cvv.TabIndex = 4;
             cvv.Text = "CVV:";
             // 
@@ -173,7 +173,7 @@ namespace Project
             balanced.ForeColor = Color.White;
             balanced.Location = new Point(29, 336);
             balanced.Name = "balanced";
-            balanced.Size = new Size(166, 41);
+            balanced.Size = new Size(131, 33);
             balanced.TabIndex = 25;
             balanced.Text = "Balanced:";
             // 
@@ -185,7 +185,7 @@ namespace Project
             name.ForeColor = Color.White;
             name.Location = new Point(29, 416);
             name.Name = "name";
-            name.Size = new Size(114, 41);
+            name.Size = new Size(90, 33);
             name.TabIndex = 26;
             name.Text = "Name:";
             // 
@@ -197,7 +197,7 @@ namespace Project
             id.ForeColor = Color.White;
             id.Location = new Point(29, 496);
             id.Name = "id";
-            id.Size = new Size(189, 41);
+            id.Size = new Size(149, 33);
             id.TabIndex = 27;
             id.Text = "Account ID:";
             // 
@@ -206,9 +206,9 @@ namespace Project
             qrCode.AutoSize = true;
             qrCode.Font = new Font("Bahnschrift", 20F, FontStyle.Regular, GraphicsUnit.Point);
             qrCode.ForeColor = Color.White;
-            qrCode.Location = new Point(563, 571);
+            qrCode.Location = new Point(592, 571);
             qrCode.Name = "qrCode";
-            qrCode.Size = new Size(225, 41);
+            qrCode.Size = new Size(181, 33);
             qrCode.TabIndex = 29;
             qrCode.Text = "Your QR Code";
             // 
@@ -219,7 +219,7 @@ namespace Project
             lblBalance.ForeColor = Color.White;
             lblBalance.Location = new Point(218, 339);
             lblBalance.Name = "lblBalance";
-            lblBalance.Size = new Size(0, 38);
+            lblBalance.Size = new Size(0, 30);
             lblBalance.TabIndex = 30;
             // 
             // lblPhone
@@ -229,7 +229,7 @@ namespace Project
             lblPhone.ForeColor = Color.White;
             lblPhone.Location = new Point(218, 496);
             lblPhone.Name = "lblPhone";
-            lblPhone.Size = new Size(0, 38);
+            lblPhone.Size = new Size(0, 30);
             lblPhone.TabIndex = 31;
             // 
             // lblName
@@ -239,7 +239,7 @@ namespace Project
             lblName.ForeColor = Color.White;
             lblName.Location = new Point(218, 416);
             lblName.Name = "lblName";
-            lblName.Size = new Size(0, 38);
+            lblName.Size = new Size(0, 30);
             lblName.TabIndex = 32;
             // 
             // IdOutput
@@ -250,7 +250,7 @@ namespace Project
             IdOutput.ForeColor = Color.White;
             IdOutput.Location = new Point(671, 136);
             IdOutput.Name = "IdOutput";
-            IdOutput.Size = new Size(0, 24);
+            IdOutput.Size = new Size(0, 19);
             IdOutput.TabIndex = 33;
             // 
             // nameOutput
@@ -261,7 +261,7 @@ namespace Project
             nameOutput.ForeColor = Color.White;
             nameOutput.Location = new Point(671, 166);
             nameOutput.Name = "nameOutput";
-            nameOutput.Size = new Size(0, 24);
+            nameOutput.Size = new Size(0, 19);
             nameOutput.TabIndex = 34;
             // 
             // imgQRCode
@@ -275,7 +275,7 @@ namespace Project
             // 
             // HomePanel
             // 
-            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(57, 62, 70);
             Controls.Add(imgQRCode);

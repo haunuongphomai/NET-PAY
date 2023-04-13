@@ -862,19 +862,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\phanb\\.nuget\\packages\\": {}
+    "C:\\Users\\huynhhao\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\phanb\\Desktop\\Net-Pay\\Project\\Project.csproj",
+      "projectUniqueName": "C:\\Users\\huynhhao\\Desktop\\Net-Pay\\Project\\Project.csproj",
       "projectName": "Project",
-      "projectPath": "C:\\Users\\phanb\\Desktop\\Net-Pay\\Project\\Project.csproj",
-      "packagesPath": "C:\\Users\\phanb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\phanb\\Desktop\\Net-Pay\\Project\\obj\\",
+      "projectPath": "C:\\Users\\huynhhao\\Desktop\\Net-Pay\\Project\\Project.csproj",
+      "packagesPath": "C:\\Users\\huynhhao\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\huynhhao\\Desktop\\Net-Pay\\Project\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\phanb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\huynhhao\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -944,7 +944,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   },

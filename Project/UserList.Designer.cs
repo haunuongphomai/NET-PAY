@@ -28,67 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            userTable = new DataGridView();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             btnDelete = new Button();
-            txtSearch = new TextBox();
+            userTable = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)userTable).BeginInit();
             SuspendLayout();
             // 
-            // userTable
-            // 
-            userTable.AllowUserToAddRows = false;
-            userTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            userTable.Location = new Point(21, 134);
-            userTable.Name = "userTable";
-            userTable.RowHeadersWidth = 51;
-            userTable.Size = new Size(941, 188);
-            userTable.TabIndex = 0;
-            userTable.CellValueChanged += userTable_CellValueChanged;
-            userTable.DataBindingComplete += userTable_DataBindingComplete;
-            // 
             // btnDelete
             // 
-            btnDelete.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnDelete.Location = new Point(356, 509);
+            btnDelete.Font = new Font("Bahnschrift Condensed", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDelete.Location = new Point(367, 466);
+            btnDelete.Margin = new Padding(3, 2, 3, 2);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(258, 55);
+            btnDelete.Size = new Size(226, 41);
             btnDelete.TabIndex = 6;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
             btnDelete.Click += btnDelete_Click;
             // 
-            // txtSearch
+            // userTable
             // 
-            txtSearch.Font = new Font("Bahnschrift", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSearch.ForeColor = Color.Black;
-            txtSearch.Location = new Point(21, 53);
-            txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(350, 34);
-            txtSearch.TabIndex = 7;
-            txtSearch.TextChanged += search_TextChanged;
-            txtSearch.Enter += txtSearch_Enter;
-            txtSearch.Leave += txtSearch_Leave;
+            userTable.AllowUserToAddRows = false;
+            userTable.AllowUserToResizeColumns = false;
+            userTable.AllowUserToResizeRows = false;
+            userTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            userTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            userTable.Location = new Point(59, 114);
+            userTable.Margin = new Padding(3, 2, 3, 2);
+            userTable.Name = "userTable";
+            userTable.RowHeadersVisible = false;
+            userTable.RowHeadersWidth = 21;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.Format = "f";
+            dataGridViewCellStyle1.NullValue = null;
+            userTable.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            userTable.Size = new Size(867, 300);
+            userTable.TabIndex = 7;
             // 
             // UserList
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(57, 62, 70);
-            Controls.Add(txtSearch);
-            Controls.Add(btnDelete);
             Controls.Add(userTable);
+            Controls.Add(btnDelete);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "UserList";
             Size = new Size(984, 642);
-            Load += UserList_Load;
             ((System.ComponentModel.ISupportInitialize)userTable).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private DataGridView userTable;
         private Button btnDelete;
-        private TextBox txtSearch;
+        private DataGridView userTable;
     }
 }

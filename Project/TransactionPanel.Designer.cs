@@ -51,9 +51,9 @@
             lblPhone.AutoSize = true;
             lblPhone.Font = new Font("Bahnschrift", 20F, FontStyle.Bold, GraphicsUnit.Point);
             lblPhone.ForeColor = Color.White;
-            lblPhone.Location = new Point(30, 36);
+            lblPhone.Location = new Point(26, 27);
             lblPhone.Name = "lblPhone";
-            lblPhone.Size = new Size(121, 41);
+            lblPhone.Size = new Size(96, 33);
             lblPhone.TabIndex = 0;
             lblPhone.Text = "Phone:";
             // 
@@ -62,9 +62,9 @@
             lblMoney.AutoSize = true;
             lblMoney.Font = new Font("Bahnschrift", 20F, FontStyle.Bold, GraphicsUnit.Point);
             lblMoney.ForeColor = Color.White;
-            lblMoney.Location = new Point(30, 175);
+            lblMoney.Location = new Point(26, 131);
             lblMoney.Name = "lblMoney";
-            lblMoney.Size = new Size(121, 41);
+            lblMoney.Size = new Size(96, 33);
             lblMoney.TabIndex = 1;
             lblMoney.Text = "Money:";
             // 
@@ -73,18 +73,19 @@
             lblName.AutoSize = true;
             lblName.Font = new Font("Bahnschrift", 20F, FontStyle.Bold, GraphicsUnit.Point);
             lblName.ForeColor = Color.White;
-            lblName.Location = new Point(30, 109);
+            lblName.Location = new Point(26, 82);
             lblName.Name = "lblName";
-            lblName.Size = new Size(114, 41);
+            lblName.Size = new Size(90, 33);
             lblName.TabIndex = 2;
             lblName.Text = "Name:";
             // 
             // btnEnter
             // 
-            btnEnter.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEnter.Location = new Point(360, 516);
+            btnEnter.Font = new Font("Bahnschrift Condensed", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEnter.Location = new Point(315, 387);
+            btnEnter.Margin = new Padding(3, 2, 3, 2);
             btnEnter.Name = "btnEnter";
-            btnEnter.Size = new Size(258, 55);
+            btnEnter.Size = new Size(226, 41);
             btnEnter.TabIndex = 3;
             btnEnter.Text = "Enter";
             btnEnter.UseVisualStyleBackColor = true;
@@ -93,25 +94,28 @@
             // txtPhone
             // 
             txtPhone.Font = new Font("Bahnschrift", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPhone.Location = new Point(169, 43);
+            txtPhone.Location = new Point(148, 32);
+            txtPhone.Margin = new Padding(3, 2, 3, 2);
             txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(306, 34);
+            txtPhone.Size = new Size(268, 28);
             txtPhone.TabIndex = 4;
             // 
             // txtMoney
             // 
             txtMoney.Font = new Font("Bahnschrift", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            txtMoney.Location = new Point(169, 182);
+            txtMoney.Location = new Point(148, 136);
+            txtMoney.Margin = new Padding(3, 2, 3, 2);
             txtMoney.Name = "txtMoney";
-            txtMoney.Size = new Size(306, 34);
+            txtMoney.Size = new Size(268, 28);
             txtMoney.TabIndex = 5;
             // 
             // btnSearch
             // 
-            btnSearch.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSearch.Location = new Point(506, 43);
+            btnSearch.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSearch.Location = new Point(443, 32);
+            btnSearch.Margin = new Padding(3, 2, 3, 2);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(112, 34);
+            btnSearch.Size = new Size(98, 26);
             btnSearch.TabIndex = 7;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = true;
@@ -120,20 +124,21 @@
             // nameOutput
             // 
             nameOutput.AutoSize = true;
-            nameOutput.Font = new Font("Segoe UI", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point);
+            nameOutput.Font = new Font("Bahnschrift Condensed", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             nameOutput.ForeColor = Color.White;
-            nameOutput.Location = new Point(169, 118);
+            nameOutput.Location = new Point(148, 88);
             nameOutput.Name = "nameOutput";
-            nameOutput.Size = new Size(76, 31);
+            nameOutput.Size = new Size(46, 23);
             nameOutput.TabIndex = 8;
             nameOutput.Text = "label1";
             // 
             // btnOtp
             // 
-            btnOtp.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnOtp.Location = new Point(506, 256);
+            btnOtp.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnOtp.Location = new Point(443, 192);
+            btnOtp.Margin = new Padding(3, 2, 3, 2);
             btnOtp.Name = "btnOtp";
-            btnOtp.Size = new Size(112, 34);
+            btnOtp.Size = new Size(98, 26);
             btnOtp.TabIndex = 9;
             btnOtp.Text = "Get OTP";
             btnOtp.UseVisualStyleBackColor = true;
@@ -142,9 +147,10 @@
             // txtOtp
             // 
             txtOtp.Font = new Font("Bahnschrift", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            txtOtp.Location = new Point(169, 256);
+            txtOtp.Location = new Point(148, 192);
+            txtOtp.Margin = new Padding(3, 2, 3, 2);
             txtOtp.Name = "txtOtp";
-            txtOtp.Size = new Size(306, 34);
+            txtOtp.Size = new Size(268, 28);
             txtOtp.TabIndex = 11;
             // 
             // lblOtp
@@ -152,9 +158,9 @@
             lblOtp.AutoSize = true;
             lblOtp.Font = new Font("Bahnschrift", 20F, FontStyle.Bold, GraphicsUnit.Point);
             lblOtp.ForeColor = Color.White;
-            lblOtp.Location = new Point(30, 249);
+            lblOtp.Location = new Point(26, 187);
             lblOtp.Name = "lblOtp";
-            lblOtp.Size = new Size(93, 41);
+            lblOtp.Size = new Size(75, 33);
             lblOtp.TabIndex = 10;
             lblOtp.Text = "OTP: ";
             // 
@@ -163,18 +169,19 @@
             lblOr.AutoSize = true;
             lblOr.Font = new Font("Bahnschrift", 20F, FontStyle.Bold, GraphicsUnit.Point);
             lblOr.ForeColor = Color.White;
-            lblOr.Location = new Point(635, 36);
+            lblOr.Location = new Point(556, 27);
             lblOr.Name = "lblOr";
-            lblOr.Size = new Size(55, 41);
+            lblOr.Size = new Size(44, 33);
             lblOr.TabIndex = 12;
             lblOr.Text = "Or";
             // 
             // btnQRCode
             // 
-            btnQRCode.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnQRCode.Location = new Point(708, 42);
+            btnQRCode.Font = new Font("Bahnschrift Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnQRCode.Location = new Point(620, 32);
+            btnQRCode.Margin = new Padding(3, 2, 3, 2);
             btnQRCode.Name = "btnQRCode";
-            btnQRCode.Size = new Size(112, 34);
+            btnQRCode.Size = new Size(98, 26);
             btnQRCode.TabIndex = 13;
             btnQRCode.Text = "QR Code";
             btnQRCode.UseVisualStyleBackColor = true;
@@ -185,15 +192,15 @@
             lblWarning.AutoSize = true;
             lblWarning.Font = new Font("Bahnschrift", 20F, FontStyle.Bold, GraphicsUnit.Point);
             lblWarning.ForeColor = Color.Red;
-            lblWarning.Location = new Point(249, 472);
+            lblWarning.Location = new Point(231, 354);
             lblWarning.Name = "lblWarning";
-            lblWarning.Size = new Size(483, 41);
+            lblWarning.Size = new Size(382, 33);
             lblWarning.TabIndex = 14;
             lblWarning.Text = "This account has been banned!";
             // 
             // TransactionPanel
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(57, 62, 70);
             Controls.Add(lblWarning);
@@ -210,8 +217,9 @@
             Controls.Add(lblName);
             Controls.Add(lblMoney);
             Controls.Add(lblPhone);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "TransactionPanel";
-            Size = new Size(984, 642);
+            Size = new Size(861, 482);
             Load += TransactionPanel_Load;
             ResumeLayout(false);
             PerformLayout();

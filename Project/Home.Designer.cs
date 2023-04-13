@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             actionBar = new Panel();
             btnPanel = new Panel();
             btnTransaction = new Button();
@@ -36,13 +37,11 @@
             btnExit = new Button();
             btnHome = new Button();
             modifAcc = new Button();
-            button2 = new Button();
-            btnLogOut = new Button();
             logo = new PictureBox();
+            btnLogOut = new Button();
             header = new Panel();
             button1 = new Button();
             lblGreeting = new Label();
-            search = new TextBox();
             voidPanel = new Panel();
             timer1 = new System.Windows.Forms.Timer(components);
             actionBar.SuspendLayout();
@@ -63,14 +62,12 @@
             // 
             // btnPanel
             // 
-            btnPanel.BackColor = Color.FromArgb(203, 228, 222);
+            btnPanel.BackColor = Color.FromArgb(125, 157, 156);
             btnPanel.Controls.Add(btnTransaction);
             btnPanel.Controls.Add(btnHistory);
             btnPanel.Controls.Add(btnExit);
             btnPanel.Controls.Add(btnHome);
             btnPanel.Controls.Add(modifAcc);
-            btnPanel.Controls.Add(button2);
-            btnPanel.Controls.Add(btnLogOut);
             btnPanel.Location = new Point(0, 198);
             btnPanel.Name = "btnPanel";
             btnPanel.Size = new Size(272, 502);
@@ -78,91 +75,131 @@
             // 
             // btnTransaction
             // 
-            btnTransaction.Location = new Point(83, 76);
+            btnTransaction.BackColor = Color.Transparent;
+            btnTransaction.FlatAppearance.BorderSize = 0;
+            btnTransaction.FlatStyle = FlatStyle.Flat;
+            btnTransaction.Font = new Font("Bahnschrift Condensed", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            btnTransaction.Image = (Image)resources.GetObject("btnTransaction.Image");
+            btnTransaction.ImageAlign = ContentAlignment.MiddleLeft;
+            btnTransaction.Location = new Point(0, 80);
             btnTransaction.Name = "btnTransaction";
-            btnTransaction.Size = new Size(94, 29);
+            btnTransaction.Padding = new Padding(30, 0, 0, 0);
+            btnTransaction.Size = new Size(272, 80);
             btnTransaction.TabIndex = 3;
             btnTransaction.Text = "Transaction";
-            btnTransaction.UseVisualStyleBackColor = true;
+            btnTransaction.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnTransaction.UseVisualStyleBackColor = false;
             btnTransaction.Click += btnTransaction_Click;
             // 
             // btnHistory
             // 
-            btnHistory.Location = new Point(83, 121);
+            btnHistory.BackColor = Color.Transparent;
+            btnHistory.FlatAppearance.BorderSize = 0;
+            btnHistory.FlatStyle = FlatStyle.Flat;
+            btnHistory.Font = new Font("Bahnschrift Condensed", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            btnHistory.Image = (Image)resources.GetObject("btnHistory.Image");
+            btnHistory.ImageAlign = ContentAlignment.MiddleLeft;
+            btnHistory.Location = new Point(0, 240);
             btnHistory.Name = "btnHistory";
-            btnHistory.Size = new Size(94, 29);
+            btnHistory.Padding = new Padding(30, 0, 0, 0);
+            btnHistory.Size = new Size(272, 80);
             btnHistory.TabIndex = 2;
             btnHistory.Text = "History";
-            btnHistory.UseVisualStyleBackColor = true;
+            btnHistory.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnHistory.UseVisualStyleBackColor = false;
             btnHistory.Click += btnTest_Click;
             // 
             // btnExit
             // 
-            btnExit.Location = new Point(83, 444);
+            btnExit.BackColor = Color.Transparent;
+            btnExit.FlatAppearance.BorderSize = 0;
+            btnExit.FlatStyle = FlatStyle.Flat;
+            btnExit.Font = new Font("Bahnschrift Condensed", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            btnExit.Image = (Image)resources.GetObject("btnExit.Image");
+            btnExit.ImageAlign = ContentAlignment.MiddleLeft;
+            btnExit.Location = new Point(0, 320);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(94, 29);
+            btnExit.Padding = new Padding(30, 0, 0, 0);
+            btnExit.Size = new Size(272, 80);
             btnExit.TabIndex = 1;
             btnExit.Text = "Exit";
-            btnExit.UseVisualStyleBackColor = true;
+            btnExit.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnExit_Click;
             // 
             // btnHome
             // 
-            btnHome.Location = new Point(83, 32);
+            btnHome.BackColor = Color.Transparent;
+            btnHome.FlatAppearance.BorderSize = 0;
+            btnHome.FlatStyle = FlatStyle.Flat;
+            btnHome.Font = new Font("Bahnschrift Condensed", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            btnHome.Image = (Image)resources.GetObject("btnHome.Image");
+            btnHome.ImageAlign = ContentAlignment.MiddleLeft;
+            btnHome.Location = new Point(0, 0);
             btnHome.Name = "btnHome";
-            btnHome.Size = new Size(94, 29);
+            btnHome.Padding = new Padding(30, 0, 0, 0);
+            btnHome.Size = new Size(272, 80);
             btnHome.TabIndex = 0;
             btnHome.Text = "Home";
-            btnHome.UseVisualStyleBackColor = true;
+            btnHome.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnHome.UseVisualStyleBackColor = false;
             btnHome.Click += btnHome_Click;
             // 
             // modifAcc
             // 
-            modifAcc.Location = new Point(55, 299);
+            modifAcc.BackColor = Color.Transparent;
+            modifAcc.FlatAppearance.BorderSize = 0;
+            modifAcc.FlatStyle = FlatStyle.Flat;
+            modifAcc.Font = new Font("Bahnschrift Condensed", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            modifAcc.Image = (Image)resources.GetObject("modifAcc.Image");
+            modifAcc.ImageAlign = ContentAlignment.MiddleLeft;
+            modifAcc.Location = new Point(0, 160);
             modifAcc.Name = "modifAcc";
-            modifAcc.Size = new Size(140, 51);
+            modifAcc.Padding = new Padding(30, 0, 0, 0);
+            modifAcc.Size = new Size(272, 80);
             modifAcc.TabIndex = 5;
-            modifAcc.Text = "Account Settings";
-            modifAcc.UseVisualStyleBackColor = true;
+            modifAcc.Text = "Account ";
+            modifAcc.TextImageRelation = TextImageRelation.ImageBeforeText;
+            modifAcc.UseVisualStyleBackColor = false;
             modifAcc.Click += modifAcc_Click;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(52, 178);
-            button2.Name = "button2";
-            button2.Size = new Size(140, 56);
-            button2.TabIndex = 9;
-            button2.Text = "Account";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
-            // btnLogOut
-            // 
-            btnLogOut.Location = new Point(55, 242);
-            btnLogOut.Name = "btnLogOut";
-            btnLogOut.Size = new Size(137, 51);
-            btnLogOut.TabIndex = 6;
-            btnLogOut.Text = "Logout";
-            btnLogOut.UseVisualStyleBackColor = true;
-            btnLogOut.Click += btnLogOut_Click;
             // 
             // logo
             // 
             logo.BackColor = Color.Transparent;
+            logo.BorderStyle = BorderStyle.FixedSingle;
             logo.Image = Properties.Resources.logo;
-            logo.Location = new Point(36, 50);
+            logo.Location = new Point(0, 0);
             logo.Name = "logo";
-            logo.Size = new Size(200, 78);
-            logo.SizeMode = PictureBoxSizeMode.AutoSize;
+            logo.Size = new Size(273, 195);
+            logo.SizeMode = PictureBoxSizeMode.CenterImage;
             logo.TabIndex = 1;
             logo.TabStop = false;
             // 
+            // btnLogOut
+            // 
+            btnLogOut.BackColor = Color.Transparent;
+            btnLogOut.FlatAppearance.BorderSize = 0;
+            btnLogOut.FlatStyle = FlatStyle.Flat;
+            btnLogOut.Font = new Font("Bahnschrift Condensed", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLogOut.ForeColor = SystemColors.ButtonHighlight;
+            btnLogOut.Image = (Image)resources.GetObject("btnLogOut.Image");
+            btnLogOut.ImageAlign = ContentAlignment.MiddleRight;
+            btnLogOut.Location = new Point(898, 3);
+            btnLogOut.Name = "btnLogOut";
+            btnLogOut.Size = new Size(83, 50);
+            btnLogOut.TabIndex = 6;
+            btnLogOut.TabStop = false;
+            btnLogOut.Text = "Logout";
+            btnLogOut.TextAlign = ContentAlignment.MiddleLeft;
+            btnLogOut.UseVisualStyleBackColor = false;
+            btnLogOut.Click += btnLogOut_Click;
+            // 
             // header
             // 
-            header.BackColor = Color.FromArgb(34, 40, 49);
+            header.BackColor = Color.Black;
             header.Controls.Add(button1);
             header.Controls.Add(lblGreeting);
-            header.Controls.Add(search);
+            header.Controls.Add(btnLogOut);
             header.Location = new Point(272, 0);
             header.Name = "header";
             header.Size = new Size(984, 58);
@@ -188,34 +225,21 @@
             lblGreeting.ForeColor = Color.White;
             lblGreeting.Location = new Point(75, 15);
             lblGreeting.Name = "lblGreeting";
-            lblGreeting.Size = new Size(0, 33);
+            lblGreeting.Size = new Size(0, 27);
             lblGreeting.TabIndex = 0;
-            // 
-            // search
-            // 
-            search.Font = new Font("Bahnschrift", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            search.ForeColor = Color.FromArgb(153, 153, 153);
-            search.Location = new Point(605, 15);
-            search.Name = "search";
-            search.Size = new Size(350, 34);
-            search.TabIndex = 2;
-            search.Enter += search_Enter;
-            search.Leave += search_Leave;
             // 
             // voidPanel
             // 
+            voidPanel.BackColor = Color.White;
             voidPanel.ImeMode = ImeMode.Katakana;
             voidPanel.Location = new Point(272, 58);
             voidPanel.Name = "voidPanel";
             voidPanel.Size = new Size(984, 642);
             voidPanel.TabIndex = 2;
             // 
-            // timer1
-            // 
-            // 
             // Home
             // 
-            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(57, 62, 70);
             ClientSize = new Size(1256, 700);
@@ -228,7 +252,6 @@
             Text = "Home";
             Load += Home_Load;
             actionBar.ResumeLayout(false);
-            actionBar.PerformLayout();
             btnPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)logo).EndInit();
             header.ResumeLayout(false);
@@ -241,7 +264,6 @@
         private Panel header;
         private PictureBox logo;
         private Label lblGreeting;
-        private TextBox search;
 
         #endregion
         private Button btnHome;
@@ -252,7 +274,6 @@
         private System.Windows.Forms.Timer timer1;
         private Button button1;
         private Button modifAcc;
-        private Button button2;
         private Button btnLogOut;
     }
 }

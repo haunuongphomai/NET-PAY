@@ -31,7 +31,6 @@
             label1 = new Label();
             historyTable = new DataGridView();
             btnExport = new Button();
-            txtSearch = new TextBox();
             btnInvoice = new Button();
             ((System.ComponentModel.ISupportInitialize)historyTable).BeginInit();
             SuspendLayout();
@@ -39,54 +38,46 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Bahnschrift Condensed", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(24, 26);
+            label1.Location = new Point(19, 21);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(304, 46);
+            label1.Size = new Size(183, 33);
             label1.TabIndex = 0;
             label1.Text = "Transaction History";
             // 
             // historyTable
             // 
             historyTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            historyTable.Location = new Point(24, 130);
+            historyTable.Location = new Point(77, 115);
+            historyTable.Margin = new Padding(2);
             historyTable.Name = "historyTable";
-            historyTable.RowHeadersWidth = 51;
+            historyTable.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             historyTable.RowTemplate.Height = 29;
-            historyTable.Size = new Size(940, 188);
+            historyTable.Size = new Size(844, 235);
             historyTable.TabIndex = 1;
             historyTable.CellClick += historyTable_CellClick;
             // 
             // btnExport
             // 
-            btnExport.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnExport.Location = new Point(192, 526);
+            btnExport.Font = new Font("Bahnschrift Condensed", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnExport.Location = new Point(200, 421);
+            btnExport.Margin = new Padding(2);
             btnExport.Name = "btnExport";
-            btnExport.Size = new Size(258, 55);
+            btnExport.Size = new Size(206, 44);
             btnExport.TabIndex = 4;
             btnExport.Text = "Export";
             btnExport.UseVisualStyleBackColor = true;
             btnExport.Click += btnExport_Click;
             // 
-            // txtSearch
-            // 
-            txtSearch.Font = new Font("Bahnschrift", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSearch.ForeColor = Color.Black;
-            txtSearch.Location = new Point(614, 76);
-            txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(350, 34);
-            txtSearch.TabIndex = 8;
-            txtSearch.TextChanged += txtSearch_TextChanged;
-            txtSearch.Enter += txtSearch_Enter;
-            txtSearch.Leave += txtSearch_Leave;
-            // 
             // btnInvoice
             // 
-            btnInvoice.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnInvoice.Location = new Point(483, 526);
+            btnInvoice.Font = new Font("Bahnschrift Condensed", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnInvoice.Location = new Point(553, 421);
+            btnInvoice.Margin = new Padding(2);
             btnInvoice.Name = "btnInvoice";
-            btnInvoice.Size = new Size(258, 55);
+            btnInvoice.Size = new Size(206, 44);
             btnInvoice.TabIndex = 9;
             btnInvoice.Text = "Invoice";
             btnInvoice.UseVisualStyleBackColor = true;
@@ -94,17 +85,16 @@
             // 
             // History
             // 
-            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.FromArgb(57, 62, 70);
             Controls.Add(btnInvoice);
-            Controls.Add(txtSearch);
             Controls.Add(btnExport);
             Controls.Add(historyTable);
             Controls.Add(label1);
+            Margin = new Padding(2);
             Name = "History";
             Size = new Size(984, 642);
-            Load += History_Load;
             ((System.ComponentModel.ISupportInitialize)historyTable).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -115,7 +105,6 @@
         private Label label1;
         private DataGridView historyTable;
         private Button btnExport;
-        private TextBox txtSearch;
         private Button btnInvoice;
     }
 }
